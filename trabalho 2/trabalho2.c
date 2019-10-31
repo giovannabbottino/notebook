@@ -690,6 +690,7 @@ int Menu_aluno(Node * aluno){
 void escolha_aluno(int resposta, Node * aluno){
     int r;
     Disciplina * d;
+
     switch (resposta){
 	    case 1:
                 cadastra_disciplina(d, aluno->Historico);
