@@ -1,6 +1,14 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: default
+title: Notebook
+description: 'Home'
+permalink: /
+---
 
-layout: home
+Notebook
+{: .fs-9 }
+
+Personal notebook with notes on data structure, sorting algorithm, search and some other materials.
+{: .fs-6 .fw-300 }
+
 ---
