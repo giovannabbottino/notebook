@@ -19,9 +19,9 @@ To perform a task, the algortithm must be unambiguous, standardized and precise.
 
 Algortithms can repeat steps or make decisions until the task is completed. Its implementation can be done by a computer, by another type of automaton or even by a human being.
 
-Different algorithms can accomplish the same task using a different set of instructions in more or less time, space, or effort than others. This difference may be a reflection of the applied [computational complexity]({{site.baseurl}}/algorithm/computational_complexity), which depends on [data structures]({{site.baseurl}}/data_structure/) suitable for the algorithm.
+Different algorithms can accomplish the same task using a different set of instructions in more or less time, space, or effort than others. This difference may be a reflection of the applied [computational complexity]({{site.baseurl}}/algorithm/computational_complexity), which depends on [data structures]({{site.baseurl}}/data_structure) suitable for the algorithm.
 
-Here we are going to talk about the main basics. I will explain it in detail and with a practical approach, where I will be implementing some [data structure]({{site.baseurl}}/data_structure/) and understanding the [computational complexity]({{site.baseurl}}/algorithm/computational_complexity), so that we can better understand how they work.
+Here we are going to talk about the main basics. I will explain it in detail and with a practical approach, where I will be implementing some [data structure]({{site.baseurl}}/data_structure) and understanding the [computational complexity]({{site.baseurl}}/algorithm/computational_complexity), so that we can better understand how they work.
 
 ## References
 
