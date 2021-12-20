@@ -13,7 +13,7 @@ You'll need [Ruby](https://www.ruby-lang.org/en/downloads/) and [Bundler](https:
 ```bash
 bundle install 
 
-bundle exec jekyll serve --livereload
+bundle exec jekyll serve --incremental
 ```
 The local serve will be at http://localhost:4000/.
 
