@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Algorithm 
-nav_order: 2
+nav_order: 1
 description: 'What is an algorithm?'
 has_children: true
 permalink: /algorithm 
