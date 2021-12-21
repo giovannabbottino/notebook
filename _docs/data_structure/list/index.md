@@ -112,7 +112,7 @@ Here we are going to implement some lists in C:
 [2] GEEKSFORGEEKS, (2021) Difference Between Vector and List. *GeeksforGeeks*. Available at: <https://www.geeksforgeeks.org/difference-between-vector-and-list/>. Accessed: December 21, 2021.
 {: #ref2}
 
-[3] GEEKSFORGEEKS, (2021) Linked List Data Structure. *GeeksforGeeks*. Available at: <https://www.geeksforgeeks.org/arrays-in-c-cpp/>. Accessed: December 21, 2021.
+[3] GEEKSFORGEEKS, (2021) Linked List Data Structure. *GeeksforGeeks*. Available at: <https://www.geeksforgeeks.org/data-structures/linked-list/>. Accessed: December 21, 2021.
 {: #ref3}
 
 [4] TEAM, E. C++ Vector vs. Array. *Educative*. Available at: <https://www.educative.io/edpresso/cpp-vector-vs-array>. Accessed: December 21, 2021.
