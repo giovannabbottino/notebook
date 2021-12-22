@@ -69,16 +69,16 @@ Now that we have a Node struct, we have to initialize our Node. Let's say our *i
 
 ```c
 // your function to creat a Node 
-Node * createNode(){
+Node * createNode(int info){
     Node * node = (Node *) malloc(sizeof(Node));
     node->next = NULL;
-    printf("Info:");
-    scanf("%d", &node->info);
+    node->info = info;
     return node;
+}
 }
 
 // you can call it later as
-// Node * node = createNode();
+// Node * node = createNode(info);
 ```
 
 We now have our Node with a pointer to another Node. Lets make the Queue, how is also a *struct* in C.
@@ -277,6 +277,86 @@ void dequeue(Queue * queue){
     </tr>
 </tbody>
 </table>
+
+## Code
+{: #code}
+
+```c
+/* 
+ * Giovanna Borges Bottino 
+ * giovannabbottino@gmail.com
+*/
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node{
+    int info;
+    struct node *next;
+}Node;
+
+typedef struct queue{
+    Node * front, * rear;
+    int size;
+}Queue;
+
+Queue * createQueue();
+Node * createNode(int info);
+void enqueue(Queue * queue, Node * node);
+void dequeue(Queue * queue);
+
+int main(){
+    int info = 0;
+    Node * node = createNode(info);
+
+    Queue * queue = createQueue();
+
+    enqueue(queue, node);
+
+    dequeue(queue);
+    
+    return 0;
+}
+
+Queue * createQueue(){
+    Queue * queue = (Queue *) malloc(sizeof(Queue));
+    queue->front = queue->rear = NULL;
+    queue->size = 0;
+    return queue;
+}
+
+Node * createNode(int info){
+    Node * node = (Node *) malloc(sizeof(Node));
+    node->next = NULL;
+    node->info = info;
+    return node;
+}
+
+void enqueue(Queue * queue, Node * node){
+    if(queue->rear == NULL){
+        queue->front = node;
+        queue->rear = node;
+        queue->size++;
+    }else{
+        queue->rear->next = node;
+        queue->rear = node;
+        queue->size++;
+    }
+}
+
+void dequeue(Queue * queue){
+    if(queue->front == NULL){
+        printf("Empty Queue!\n");
+    }else{
+        Node * aux = queue->front;
+        queue->front = aux->next;
+        free(aux);
+        if(queue->front == NULL){
+            queue->rear = NULL;
+        }
+        queue->size--;
+    }
+}
+```
 
 ## References
 
