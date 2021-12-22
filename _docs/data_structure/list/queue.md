@@ -194,7 +194,7 @@ void dequeue(Queue * queue){
 }
 ```
 
-But, (there is always a but) if you do only that you wont be updanting the new *front*. For do that we are going to be needing a aux Node, it is just the *front*. With this aux, we are going to make the new *front* be the *next* Node in our aux Node. 
+But, (there is always a but) if you do only that you wont be updating the new *front*. To do that we are going to need a auxiliar Node, *aux*, it is just a pointer to the *front*, in other words the first Node in the Queue. Now you can update the *front* be the *next* in our *aux*. 
 
 
 <a href="{{ site.baseurl }}/assets/images/queue/dequeue.gif" data-toggle="lightbox">
