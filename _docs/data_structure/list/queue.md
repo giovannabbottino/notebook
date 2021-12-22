@@ -22,7 +22,7 @@ Just kidding.
 
 A queue is a linear structure that follows an order: First in, First out (FIFO) [[1]](#ref1).
 
-It basically has four operations, queuing, unqueuing, front and rear. See image below for illustration.
+It basically has four operations, Enqueue, Dequeue, front and rear. See image below for illustration.
 
 <a href="{{ site.baseurl }}/assets/images/queue/queue.png" data-toggle="lightbox">
     <img src="{{ site.baseurl }}/assets/images/queue/queue.png" class="img-fluid" />
@@ -31,9 +31,9 @@ It basically has four operations, queuing, unqueuing, front and rear. See image 
 ###### From [MORAIS (2018)](#ref2)
 
 - Enqueue: adds an item to the end of the queue
-- Rear: Take the last item in line
+- Rear: get the last item in the queue
 - Dequeue: removes an item at the beginning of the queue
-- Front: get the item from the front of the queue
+- Front: get the first item in the queue
 
 Why use a queue? In cases where you only need *front* and *rear* access and the order is First In, First Out (FIFO).
 {: #why}
@@ -41,9 +41,9 @@ Why use a queue? In cases where you only need *front* and *rear* access and the 
 ## Implement a Queue
 {: #implement}
 
-Let's implement it in C!!!
+You're going to need a Node, we are going to use a *struct* in C. *Struct* group variables under the same data. The idea is to allow you to store and group data into a single data category
 
-You're going to need a Node, so let's create it. This Node can be a Person or a Car whatever you need, you can change it to whatever you want, this is just an example. But, it needs to have a pointer to the next node, so don't forget about that.
+This Node can be a Person or a Car whatever you need, you can change it to whatever you want, this is just an example. But, it needs to have a pointer to the next Node, we are going to use this pointer as a guide through the Queue, so don't forget about that.
 
 <a href="{{ site.baseurl }}/assets/images/queue/node.png" data-toggle="lightbox">
     <img src="{{ site.baseurl }}/assets/images/queue/node.png" class="img-fluid" />
@@ -59,7 +59,7 @@ typedef struct node{
 }Node;
 ```
 
-Now that we have a Node struct, we have to initialize our Node. Let's say or *info* and we point our *pointer* to *NULL*. Why? Because we still don't know who the next Node will be, but we already know our information.
+Now that we have a Node struct, we have to initialize our Node. Let's say our *info* and we point our *pointer* to *NULL*. Why? Because we still don't know who the next Node will be, but we already know our information.
 
 <a href="{{ site.baseurl }}/assets/images/queue/create_node.png" data-toggle="lightbox">
     <img src="{{ site.baseurl }}/assets/images/queue/create_node.png" class="img-fluid" />
@@ -81,9 +81,9 @@ Node * createNode(){
 // Node * node = createNode();
 ```
 
-We have now our Node with a pointer to another Node. Lets make the Queue.
+We now have our Node with a pointer to another Node. Lets make the Queue, how is also a *struct* in C.
 
-For the Queue, we are going to need a pointer *front* and *rear* to a Node, and also a *size*.
+For the Queue, we are need to know the Nodes at the *front* and *rear*, for that we need two pointers. We are going to use the *front* to know which Node is the first, and the *rear* to know wich Node is the last. Also its important to know its *size*
 
 <a href="{{ site.baseurl }}/assets/images/queue/queue_c.png" data-toggle="lightbox">
     <img src="{{ site.baseurl }}/assets/images/queue/queue_c.png" class="img-fluid" />
@@ -99,7 +99,7 @@ typedef struct queue{
 }Queue;
 ```
 
-We can initialize with no *front* or *rear* and *size* equal zero, as follown. Why? Because our Queue is empty.
+When we initialize our queue we nee to point both Front and rear to null and also set size as zero. why? Because our queue is empty
 
 <a href="{{ site.baseurl }}/assets/images/queue/create_queue.png" data-toggle="lightbox">
     <img src="{{ site.baseurl }}/assets/images/queue/create_queue.png" class="img-fluid" />
@@ -118,12 +118,14 @@ Queue * createQueue(){
 // Queue * queue = createQueue();
 ```
 
-To end our implementation we need to do the Enqueue and the Dequeue. This is because we can access the *front* and *rear* this way:
+Remeber the four operatons? We can get the last and first item in the queue with the *front* and the *rear* as follown:
 
 ```c
 queue->front;
 queue->rear;
 ```
+
+Let's continue our implementation, we still need to do the Enqueue and the Dequeue. 
 
 To populate our Queue we use the Enqueue, and to do so we need a Node and a Queue. That is why our function have those as parameters.
 
@@ -134,7 +136,7 @@ void enqueue(Queue * queue, Node * node){
 }
 ```
 
-Now, we can just add our Node in *rear* and *front* of the Queue, and increase the *size*. 
+Now, we can just add our Node in *rear* and *front* of the Queue, and also increase the *size*. 
 
 ```c
 void enqueue(Queue * queue, Node * node){
@@ -210,12 +212,12 @@ void dequeue(Queue * queue){
 }
 ```
 
-We are almost in the end. We only need to be certain that the Queue is not empty. Lets make some *ifs*.
+We are almost at the end. We only need to be certain that the Queue is not empty. Lets make some *ifs*.
 
 ```c
 void dequeue(Queue * queue){
     if(queue->front == NULL){
-        printf("Fila vazia!\n");
+        printf("Empty Queue!\n");
     }else{
         Node * aux = queue->front;
         queue->front = aux->next;
