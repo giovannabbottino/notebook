@@ -26,7 +26,7 @@ In an array, each item stored in contiguous memory is uniquely identified by its
 int arr[10];
 
 // specifying size and initializing elements
-int arr2[10] = { 1, 2, 3, 4 }
+int arr2[5] = { 1, 2, 3, 4, 5 }
 ```
 
 As you can see, in a non-dynamic array, its size is fixed. Once the array is initialized with values and allocated space in memory, you cannot change its size. Hence, it is a memory-efficient [data structure]({{site.baseurl}}/data_structure) where each element occupies a single space. It is best suited for frequent accessing of elements regardless of their position [[4]](#ref4).
@@ -44,6 +44,14 @@ A typical vector implementation grows by doubling its allocated space instead of
 Finally, answering the first question: list is a linear data structure in which elements are not stored in contiguous memory locations. In a linked list each elements are nodes that contains a data field and a reference to the next node [[3]](#ref3).
 
 It has non-contiguous memory and there is no pre-allocated memory. Each element requires extra space for the node that contains the element, including pointers to the next and previous element in the list. Different from vectors insertion and deletion are cheap no matter where it occurs [[4]](#ref4). 
+
+Here we are going to implement some lists in C: 
+- [Queue]({{site.baseurl}}/data_structure/list/queue)
+- Stack
+- Linked List
+- Linked Circular List
+- Doubly Linked List
+- Doubly Linked Circular List
 
 ## The [Big-O notation]({{site.baseurl}}/algorithm/computational_complexity#bigO)
 
@@ -88,21 +96,13 @@ It has non-contiguous memory and there is no pre-allocated memory. Each element 
     </tr>
     <tr>
         <th>Vector/Array</th>
-        <td >Θ(1)</td >	<td >Θ(n)</td >	<td >Θ(n)</td >	<td >Θ(n)</td >	<td >O(1)</td >	<td >O(n)</td >	<td >O(n)</td >	<td >O(n)</td >	<td >O(n)</td >
+        <td >O(1)</td >	<td >O(n)</td >	<td >O(n)</td >	<td >O(n)</td >	<td >O(1)</td >	<td >O(n)</td >	<td >O(n)</td >	<td >O(n)</td >	<td >O(n)</td >
     </tr>
     <tr>
-<th>Doubly-Linked List</th>	<td >Θ(n)</td >	<td >Θ(n)</td >	<td >Θ(1)</td >	<td >Θ(1)</td >	<td >O(n)</td >	<td >O(n)</td >	<td >O(1)</td >	<td >O(1)</td >	<td >O(n)</td >
+<th>Doubly-Linked List</th>	<td >O(n)</td >	<td >O(n)</td >	<td >O(1)</td >	<td >O(1)</td >	<td >O(n)</td >	<td >O(n)</td >	<td >O(1)</td >	<td >O(1)</td >	<td >O(n)</td >
 </tr>
 </tbody>
 </table>
-
-Here we are going to implement some lists in C: 
-- Queue
-- Stack
-- Linked List
-- Linked Circular List
-- Doubly Linked List
-- Doubly Linked Circular List
 
 ## References
 
