@@ -95,7 +95,7 @@ typedef struct stack{
 }Stack;
 ```
 
-When we initialize our Stack we nee to point top to null and also set size as zero. why? Because our stack is empty
+When we initialize our Stack we need to point top to null and also set size as zero. why? Because our stack is empty
 
 <a href="{{ site.baseurl }}/assets/images/stack/create_stack.png" data-toggle="lightbox">
     <img src="{{ site.baseurl }}/assets/images/stack/create_stack.png" class="img-fluid" />
@@ -114,7 +114,7 @@ Stack * createStack(){
 // Stack * stack = createStack();
 ```
 
-We can get the first item in the Stack with the *top* as follown:
+We can get the first item in the Stack with the *top* as follows:
 
 ```c
 stack->top;
@@ -129,7 +129,7 @@ void push(Stack * stack, Node * node){
 }
 ```
 
-Now, we can just add our Node in *top* of the Stack, and also increase the *size*. But remember, like we did in [Queue]({{site.baseurl}}/data_structure/list/queue), we need to point our pointer at the Node, *next*, to the *top*. We have to do this before updating the *top*, because we don't want to lose this Node that is below the new *top*.
+Now, we can just add our Node to the *top* of the Stack, and also increase the *size*. But remember, like we did in [Queue]({{site.baseurl}}/data_structure/list/queue), we need to point our pointer *next* to, in this case, the *top*. We have to do this before updating the *top*, because we don't want to lose this Node that is below.
 
 ```c
 void push(Stack * stack, Node * node){
@@ -139,7 +139,7 @@ void push(Stack * stack, Node * node){
 }
 ```
 
-Don't worry about the first one, we initialize it with *NULL*.
+When the Stack is empty, you don't need to about it. Remeber, we initialize it with *NULL*.
 
 Let's make it Pop. To Pop you will only need the Stack itself.
 
@@ -150,7 +150,7 @@ void pop(Stack * stack){
 }
 ```
 
-We can just remove the first node. As we saw in the [Queue]({{site.baseurl}}/data_structure/list/queue)  that we are going to need an auxiliary Node, *aux*. In this case, a pointer to the *top*, the first Node in the Stack. Because, without storing the old *top*, you don't have access to the *next* in the Stack and this way you can't update your *top*.
+We can just remove the first node. As we saw in the [Queue]({{site.baseurl}}/data_structure/list/queue) that we are going to need an auxiliary Node, *aux*. In this case, a pointer to the *top*, the first Node in the Stack. Without storing the old *top* you wont have access to the *next* Node in the Stack, and you wont be able to update the *top* of your Stack
 
 Don't forget to add the case where the Stack is empty.
 
