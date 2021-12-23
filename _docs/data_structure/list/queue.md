@@ -148,12 +148,6 @@ void enqueue(Queue * queue, Node * node){
 
 However, if you try to do this, you will find that it doesn't work as we thought. Our Queue should tell who is the new *rear* AND who is the previous *rear*. For that, we are going to point our pointer *next* in the *rear* to the new Node. After that, we can make our *rear* be the new Node.
 
-<a href="{{ site.baseurl }}/assets/images/queue/enqueue.gif" data-toggle="lightbox">
-    <img src="{{ site.baseurl }}/assets/images/queue/enqueue.gif" class="img-fluid" />
-</a>
-
-###### From Bottino(2021)
-
 So let's create a condition for if it's not empty.
 
 ```c
@@ -196,12 +190,6 @@ void dequeue(Queue * queue){
 
 But, (there is always a but) if you do only that you wont be updating the new *front*. To do that we are going to need a auxiliar Node, *aux*, it is just a pointer to the *front*, in other words the first Node in the Queue. Now you can update the *front* be the *next* in our *aux*. 
 
-
-<a href="{{ site.baseurl }}/assets/images/queue/dequeue.gif" data-toggle="lightbox">
-    <img src="{{ site.baseurl }}/assets/images/queue/dequeue.gif" class="img-fluid" />
-</a>
-
-###### From Bottino(2021)
 
 ```c
 void dequeue(Queue * queue){
@@ -273,7 +261,7 @@ void dequeue(Queue * queue){
         <th></th>
     </tr>
     <tr> 
-    <th>Queue</th><td>Θ(n)</td>	<td>Θ(n)</td>	<td>Θ(1)</td>	<td>Θ(1)</td>	<td>O(n)</td>	<td>O(n)</td>	<td>O(1)</td>	<td>O(1)</td>	<td>O(n)</td>
+    <th>Queue</th><td>O(n)</td>	<td>O(n)</td>	<td>O(1)</td>	<td>O(1)</td>	<td>O(n)</td>	<td>O(n)</td>	<td>O(1)</td>	<td>O(1)</td>	<td>O(n)</td>
     </tr>
 </tbody>
 </table>
@@ -285,7 +273,7 @@ void dequeue(Queue * queue){
 /* 
  * Giovanna Borges Bottino 
  * giovannabbottino@gmail.com
-*/
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
