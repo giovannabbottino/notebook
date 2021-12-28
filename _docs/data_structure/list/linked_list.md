@@ -19,8 +19,8 @@ There are three types of linked lists: Singly, Doubly, and (Singly or Doubly) Ci
 
 In both, you can find a head and a tail, the difference remains that in a singly linked list the node references only to the next. A doubly linked list has two, one to the next node and another to the previous node. In this case, the next reference in last node is equal to NULL. That changes in the circular linked list, the reference is equal to the head. You can see the image to understand better. 
 
-<a href="{{ site.baseurl }}/assets/images/list/linked_list.png" data-toggle="lightbox">
-    <img src="{{ site.baseurl }}/assets/images/list/linked_list.png" class="img-fluid" />
+<a href="{{ site.baseurl }}/assets/images/list/linked_list.jpg" data-toggle="lightbox">
+    <img src="{{ site.baseurl }}/assets/images/list/linked_list.jpg" class="img-fluid" />
 </a>
 
 ###### From [KEARNEY (2014)](#ref1)
