@@ -202,7 +202,11 @@ int indexOf(List *list, Node *node){
     </tr>
     <tr>
         <th>Singly-Linked List</th>	<td>O(n)</td>	<td>O(n)</td>	<td>O(1)</td>	<td>O(1)</td>	<td>O(n)</td>	<td>O(n)</td>	<td>O(1)</td>	<td>O(1)</td>	<td>O(n)</td>
+    </tr>
+    <tr>
         <th>Doubly-Linked List</th>	<td>O(n)</td>	<td>O(n)</td>	<td>O(1)</td>	<td>O(1)</td>	<td>O(n)</td>	<td>O(n)</td>	<td>O(1)</td>	<td>O(1)</td>	<td>O(n)</td>
+    </tr>
+    <tr>
         <th>Circular Linked List</th>	
         <td>O(n)</td>	
         <td>O(n)</td>
