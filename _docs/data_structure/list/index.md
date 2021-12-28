@@ -48,10 +48,9 @@ It has non-contiguous memory and there is no pre-allocated memory. Each element 
 Here we are going to implement some lists in C: 
 - [Queue]({{site.baseurl}}/data_structure/list/queue)
 - [Stack]({{site.baseurl}}/data_structure/list/stack)
-- Linked List
-- Linked Circular List
-- Doubly Linked List
-- Doubly Linked Circular List
+- [Linked List]({{site.baseurl}}/data_structure/list/linked_list) 
+- [Doubly Linked List]({{site.baseurl}}/data_structure/list/linked_list)
+- [Circular Linked List]({{site.baseurl}}/data_structure/list/linked_list)  
 
 ## The [Big-O notation]({{site.baseurl}}/algorithm/computational_complexity#bigO)
 
