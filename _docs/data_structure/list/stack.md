@@ -248,7 +248,7 @@ int main(){
     
     push(stack, node);
     
-    top(stack);
+    pop(stack);
     
     return 0;
 }
@@ -276,7 +276,7 @@ void push(Stack * stack, Node * node){
 }
 
 void pop(Stack * stack){
-    if(isEmpty(stack)){
+    if(stack->size == 0 ){
         return;
     }
     Node * aux = stack->top;
