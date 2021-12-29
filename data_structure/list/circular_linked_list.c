@@ -102,7 +102,6 @@ int main(){
 
     return 0;
 }
-
 Node *createNode(int info){
     Node * node = (Node *) malloc(sizeof(Node));
     node->next = NULL;
@@ -161,6 +160,7 @@ void push(List *list, Node *node){
     if (node){
         list->head = node;
         list->tail = node;
+        list->tail->next = list->head;
         list->size++;
     }
 }
@@ -182,6 +182,7 @@ void push_back(List *list, Node *node){
         }else{
             list->tail->next = node;
             list->tail = node;
+            list->tail->next = list->head;
             list->size++;
         }
     }
@@ -220,6 +221,7 @@ void pop_front(List *list){
     } else{
         Node * aux = list->head;
         list->head = aux->next;
+        list->tail->next = list->head;
         free(aux);
         list->size--;
     }
@@ -234,7 +236,7 @@ void pop_back(List *list){
         list->size = 0;
     } else {
         Node *tail = atPos(list, size(list) - 2);
-        tail->next = NULL;
+        tail->next = list->head;
         list->tail = tail;
         list->size--;
     }
@@ -268,7 +270,7 @@ void printList(List *list){
         return;
     }
     Node *aux = list->head;
-    while(aux != NULL){
+    for(int i=0; i<size(list); i++){
         printf("%d\t", aux->info);
         aux = aux->next;
     }

@@ -8,7 +8,7 @@
 
 typedef struct node{
     int info;
-    struct node *next;
+    struct node *next, *prev;
 }Node;
 
 typedef struct list{
@@ -37,6 +37,7 @@ void erase(List *list, int index);
 void clear(List *list);
 // print
 void printList(List *list);
+void printInverseList(List *list);
 
 int main(){
     List * list = createList();
@@ -45,7 +46,9 @@ int main(){
         Node * node = createNode(info);
         push_front(list, node);
     }
+
     printList(list);
+    printInverseList(list);
 
     while (!empty(list)){
         printf("front: %d \tback: %d \tsize: %d\n", front(list)->info, back(list)->info, size(list));
@@ -58,6 +61,7 @@ int main(){
     }
 
     printList(list);
+    printInverseList(list);
 
     while (!empty(list)){
         printf("front: %d \tback: %d size: %d\n", front(list)->info, back(list)->info, size(list));
@@ -75,6 +79,7 @@ int main(){
     printf("front: %d \tback: %d size: %d\n", front(list)->info, back(list)->info, size(list));
     
     printList(list);
+    printInverseList(list);
 
     printf("front: %d \tback: %d \tsize: %d\n", front(list)->info, back(list)->info, size(list));
     erase(list, 3);
@@ -89,6 +94,7 @@ int main(){
     }
     
     printList(list);
+    printInverseList(list);
 
     Node * node = atPos(list, 0);
     printf("Node info at 0: %d\n", node->info);
@@ -102,10 +108,9 @@ int main(){
 
     return 0;
 }
-
 Node *createNode(int info){
     Node * node = (Node *) malloc(sizeof(Node));
-    node->next = NULL;
+    node->next = node->prev = NULL;
     node->info = info;
     return node;
 }
@@ -123,7 +128,6 @@ bool empty(List *list){
         return false;
     }
 }
-
 int size(List *list){
     return list->size;
 }
@@ -169,6 +173,7 @@ void push_front(List *list, Node *node){
         if(empty(list) == true){
             push(list, node);
         }else{
+            list->head->prev = node;
             node->next = list->head;
             list->head = node;
             list->size++;
@@ -180,6 +185,7 @@ void push_back(List *list, Node *node){
         if(empty(list)){
             push(list, node);
         }else{
+            node->prev = list->tail;
             list->tail->next = node;
             list->tail = node;
             list->size++;
@@ -200,9 +206,11 @@ void insert(List *list, Node *node, int index){
         else{
             int before_index =  index-1;
             Node * after_node = atPos(list, index);
+            after_node->prev = node;
             node->next = after_node;
 
             Node * before_node = atPos(list, before_index);
+            node->prev = before_node;
             before_node->next = node;
 
             list->size++;
@@ -220,6 +228,7 @@ void pop_front(List *list){
     } else{
         Node * aux = list->head;
         list->head = aux->next;
+        list->head->prev = NULL;
         free(aux);
         list->size--;
     }
@@ -233,9 +242,9 @@ void pop_back(List *list){
         list->head = NULL;
         list->size = 0;
     } else {
-        Node *tail = atPos(list, size(list) - 2);
-        tail->next = NULL;
-        list->tail = tail;
+        Node *prev = list->tail->prev;
+        prev->next = NULL;
+        list->tail = prev;
         list->size--;
     }
 }
@@ -249,10 +258,12 @@ void erase(List *list, int index){
             pop_back(list);
         }
         else{
-            free(atPos(list,index));
-            Node *after = atPos(list, index+1);
-            Node *before = atPos(list, index-1);
+            Node *node = atPos(list, index);
+            Node *before = node->prev;
+            Node *after = node->next;
+            free(node);
             before->next = after;
+            after->prev = before;
             list->size--;
         }
     }
@@ -271,6 +282,18 @@ void printList(List *list){
     while(aux != NULL){
         printf("%d\t", aux->info);
         aux = aux->next;
+    }
+    printf("\n");
+}
+void printInverseList(List *list){
+     if (empty(list)){
+        printf("List is empty\n");
+        return;
+    }
+    Node *aux = list->tail;
+    while(aux != NULL){
+        printf("%d\t", aux->info);
+        aux = aux->prev;
     }
     printf("\n");
 }
