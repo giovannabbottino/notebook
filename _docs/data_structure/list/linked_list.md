@@ -93,15 +93,23 @@ List *createList(){
 }
 ```
 
-To populate the List, the *push* can be used. This *push* need a valid List and Node. You have to define the *next* in the *tail* to be the new Node. This way, when you push it to the end, it will have a *next* pointer to to the Node.
+To populate the List, the *push* can be used. This *push* need a valid List and Node. 
+
+There is two conditions to push, when the list is empty and when the list is not empty. When is empty you need to cast the *head* and the *tail* to be the Node. In others conditions you have to define the *next* in the *tail* to be the new Node. This way, when you push it to the end, it will have a *next* pointer to to the Node.
 
 Now you are ready to finally update the tail to the Node. 
 
 ```c
 void push(List * list, Node * node){
-    list->tail->next = node;
-    list->tail = node;
-    list->size++;
+    if(list->size == 0){
+        list->head = node;
+        list->tail = node;
+        list->size++;
+    }else{
+        list->tail->next = node;
+        list->tail = node;
+        list->size++;
+    }
 }
 ```
 
@@ -148,7 +156,7 @@ The same logic applies to *indexOf*. Use the auxiliar to search the right Node t
 ```c
 int indexOf(List *list, Node *node){
     Node *aux = list->head;
-    for (int i=0; i< list->size; i++){
+    for (int i=0; i<list->size; i++){
         if ( node->info == aux->info ){
             return i;
         }
@@ -226,16 +234,18 @@ int indexOf(List *list, Node *node){
 {: #code}
 
 ```c
-/*Giovanna Borges Bottino giovannabbottino@gmail.com*/
+/*
+ * Giovanna Borges Bottino 
+ * giovannabbottino@gmail.com
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
 
 typedef struct node{
     int info;
-    struct Node *next;
-    
-} Node;
+    struct node *next;
+}Node;
 
 typedef struct list{
     int size;
@@ -255,10 +265,10 @@ int main(){
     Node * node = createNode(10);
     push(list, node);
 
-    Node * node2 = createNode(5)
-    index = indexOf(list, node2);
+    Node * node2 = createNode(5);
+    int index = indexOf(list, node2);
 
-    Node * node = atPos(list, 0)
+    Node * node3 = atPos(list, 0);
     
     pop(list);
 
@@ -283,13 +293,19 @@ List *createList(){
 }
 
 void push(List * list, Node * node){
-    list->tail->next = node;
-    list->tail = node;
-    list->size++;
+    if(list->size == 0 ){
+        list->head = node;
+        list->tail = node;
+        list->size++;
+    }else{
+        list->tail->next = node;
+        list->tail = node;
+        list->size++;
+    }
 }
 
 void pop(List * list){
-    if (isEmpty(list)){
+    if(list->size == 0 ){
         return;
     }
     Node * aux= list->head;
