@@ -4,15 +4,6 @@
 Personal notebook with notes on data structure, sorting algorithm, search and some other materials.
 
 ## Features in C
-- [ ] SORT:
-    - [ ] bubble
-    - [ ] insertion
-    - [ ] merge
-    - [ ] quick
-    - [ ] selection
-    - [ ] shell
-- [ ] SEARCH:
-    - [ ] binary
 - [ ] DATA STRUCTURE
     - [X] [queue](https://github.com/giovannabbottino/notebook/tree/master/data_structure/list/queue.c)
     - [X] [stack](https://github.com/giovannabbottino/notebook/tree/master/data_structure/list/stack.c)
@@ -23,3 +14,12 @@ Personal notebook with notes on data structure, sorting algorithm, search and so
     - [ ] tree
     - [ ] graph
     - [ ] hash table
+- [ ] SORT:
+    - [ ] bubble
+    - [ ] insertion
+    - [ ] merge
+    - [ ] quick
+    - [ ] selection
+    - [ ] shell
+- [ ] SEARCH:
+    - [ ] binary
