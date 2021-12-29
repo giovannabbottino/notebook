@@ -1,4 +1,4 @@
-![C](https://img.shields.io/badge/C-Solutions-blue.svg?style=flat&logo=c)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  ![C](https://img.shields.io/badge/C-Solutions-blue.svg?style=flat&logo=c) 
 # Notebook
 
 Personal notebook with notes on data structure, sorting algorithm, search and some other materials.
@@ -14,10 +14,12 @@ Personal notebook with notes on data structure, sorting algorithm, search and so
 - [ ] SEARCH:
     - [ ] binary
 - [ ] DATA STRUCTURE
-    - [ ] circular_doubly_linked_list
-    - [ ] circular_linked_list
-    - [ ] doubly_linked_list
-    - [X] [linked_list](https://github.com/giovannabbottino/notebook/tree/master/data_structure/list/linked_list.c)
     - [X] [queue](https://github.com/giovannabbottino/notebook/tree/master/data_structure/list/queue.c)
     - [X] [stack](https://github.com/giovannabbottino/notebook/tree/master/data_structure/list/stack.c)
+    - [X] [linked_list](https://github.com/giovannabbottino/notebook/tree/master/data_structure/list/linked_list.c)
+    - [X] [doubly_linked_list](https://github.com/giovannabbottino/notebook/tree/master/data_structure/list/doubly_linked_list.c)
+    - [X] [circular_linked_list](https://github.com/giovannabbottino/notebook/tree/master/data_structure/list/circular_linked_list.c)
+    - [X] [circular_doubly_linked_list](https://github.com/giovannabbottino/notebook/tree/master/data_structure/list/circular_doubly_linked_list.c)
     - [ ] tree
+    - [ ] graph
+    - [ ] hash table
