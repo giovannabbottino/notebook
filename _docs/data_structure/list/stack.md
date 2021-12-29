@@ -156,7 +156,7 @@ Don't forget to add the case where the Stack is empty.
 
 ```c
 void pop(Stack * stack){
-    if(isEmpty(stack)){
+    if(stack->size == 0 ){
         return;
     }
     Node * aux = stack->top;
