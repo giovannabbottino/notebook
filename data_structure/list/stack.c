@@ -1,4 +1,7 @@
-/*Giovanna Borges Bottino giovannabbottino@gmail.com*/
+/*
+* Giovanna Borges Bottino 
+* giovannabbottino@gmail.com
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,27 +18,25 @@ typedef struct stack{
 }Stack;
 
 Stack * createStack();
-Node * createNode();
+Node * createNode(int info);
 void push(Stack * stack, Node * node);
 void pop(Stack * stack);
-void top(Stack *stack);
-bool isEmpty(Stack * stack);
-void printStack(Stack * stack);
+bool empty(Stack *stack);
+int size(Stack *stack);
+Node * top(Stack *stack);
 
 int main(){
-    int i;
     Stack * stack = createStack();
-    Node * node;
-    for(i=0; i<10; i++){
-        node = createNode();
+    
+    for (int info = 0; info<5; info++){
+        Node * node = createNode(info);
         push(stack, node);
     }
-    
-    printStack(stack);
-    printf("\n-------------------\n");
-    top(stack);
-    pop(stack);
-    top(stack);
+
+    while (!empty(stack)){
+        printf("top: %d \n", top(stack)->info);
+        pop(stack);
+    }
     
     return 0;
 }
@@ -47,11 +48,10 @@ Stack * createStack(){
     return stack;
 }
 
-Node * createNode(){
+Node * createNode(int info){
     Node * node = (Node *) malloc(sizeof(Node));
     node->next = NULL;
-    printf("Info:");
-    scanf("%d", &node->info);
+    node->info = info;
     return node;
 }
 
@@ -64,7 +64,7 @@ void push(Stack * stack, Node * node){
 }
 
 void pop(Stack * stack){
-    if(isEmpty(stack)){
+    if(empty(stack)){
         return;
     }
     Node * aux = stack->top;
@@ -72,24 +72,15 @@ void pop(Stack * stack){
     free(aux);
     stack->size--;
 }
-
-void top(Stack *stack){
-    if(stack->top){
-        printf("TOP: %d\n", stack->top->info);
-    } else{
-        printf("Stack empty\n");
-    }
+bool empty(Stack *stack){
+    if(stack->size == 0 ) return true;
+    else return false;
 }
 
-bool isEmpty(Stack * stack){
-    return stack->size == 0;
+int size(Stack *stack){
+    return stack->size;
 }
 
-
-void printStack(Stack * stack){
-    Node * aux = stack->top;
-    while(aux){
-        printf("%d, ", aux->info);
-        aux = aux->next;
-    }
+Node * top(Stack *stack){
+    return stack->top;
 }
