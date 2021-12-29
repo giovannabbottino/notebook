@@ -139,7 +139,7 @@ void push(Stack * stack, Node * node){
 }
 ```
 
-When the Stack is empty, you don't need to about it. Remeber, we initialize it with *NULL*.
+When the Stack is empty, you don't need to worry about it. Remeber, we initialize it with *NULL*.
 
 Let's make it Pop. To Pop you will only need the Stack itself.
 
