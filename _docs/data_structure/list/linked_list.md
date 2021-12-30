@@ -281,7 +281,7 @@ typedef struct list{
 Node *createNode(int info);
 List *createList();
 void push(List *list, Node *node);
-void pop(List *list);
+void pop(List *list, int index);
 Node *atPos(List *list, int index);
 int indexOf(List *list, Node *node);
 
@@ -296,7 +296,7 @@ int main(){
 
     Node * node3 = atPos(list, 0);
     
-    pop(list);
+    pop(list, 0);
 
     return 0;
 }
@@ -330,13 +330,24 @@ void push(List * list, Node * node){
     }
 }
 
-void pop(List * list){
-    if(list->size == 0 ){
-        return;
+void pop(List *list, int index){
+    if ( index < 0 || index > size(list)){
+        printf("Invalid position!\n");
+    } else if (index==0){
+        Node * aux = list->head;
+        list->head = aux->next;
+        free(aux);
+    } else if(index == size(list) - 1){ 
+        Node *aux = atPos(list, size(list) - 2);
+        free(atPos(list,index));
+        aux->next = NULL;
+        list->tail = aux;
+    } else{
+        Node *after = atPos(list, index+1);
+        Node *before = atPos(list, index-1);
+        free(atPos(list,index));
+        before->next = after;
     }
-    Node * aux= list->head;
-    list->head = aux->next;
-    free(aux);
     list->size--;
 }
 
