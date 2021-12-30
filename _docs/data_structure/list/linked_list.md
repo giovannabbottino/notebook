@@ -13,11 +13,11 @@ Linked List
 How to [implement](#implement) a Linked List?
 {: .fs-6 .fw-300  }
 
-I hope that you already know what is a [list]({{site.baseurl}}/data_structure/list). If you don't, go read it. 
+I hope that you already know what is a [list]({{site.baseurl}}/data_structure/list). You can read about it [here]({{site.baseurl}}/data_structure/list). 
 
-There are three types of linked lists: Singly, Doubly, and (Singly or Doubly) Circular. 
+There are three types of linked lists: Singly, Doubly, and Circular (Singly or Doubly). 
 
-In both, you can find a head and a tail, the difference remains that in a singly linked list the node references only to the next. A doubly linked list has two, one to the next node and another to the previous node. In this case, the next reference in last node is equal to NULL. That changes in the circular linked list, the reference is equal to the head. You can see the image to understand better. 
+In singly and doubly, you can find a *head* and a *tail*, the difference remains that in a singly linked list the node references only to the *next* element. A doubly linked list has two pointers, one to the *next* node and another to the *previous* node. In those cases, the *next* in last node and *prev* in the first node reference is equal to NULL. That changes in the circular linked list, at the last node the *next* reference is equal to the *head* and the first node the *prev* reference is equal to the *tail*. You can see the image to understand better. 
 
 <a href="{{ site.baseurl }}/assets/images/list/linked_list.jpg" data-toggle="lightbox">
     <img src="{{ site.baseurl }}/assets/images/list/linked_list.jpg" class="img-fluid" />
@@ -28,30 +28,30 @@ In both, you can find a head and a tail, the difference remains that in a singly
 Why do we have so many lists?
 {: #why}
 
-Well, the singly is used when there is memory limitation or there is no need of searching. When you need to perform search operations, you can use the doubly. As is more efficient in accessing elements, since it is possible to traverse both forward and backwards
+Well, the singly list is used when there is memory limitation or there is no need of searching. When you need to perform search operations, you can use the doubly. As is more efficient in accessing elements, since it is possible to traverse both forward and backwards
 
-Even better, the circular list. Circular lists are useful in applications to repeatedly go around the list. We can traverse the whole list by starting from any point. However, it uses a lot of memory.
+Circular lists are useful in applications to repeatedly go around the list. We can traverse the whole list by starting from any point. However, it uses a lot of memory.
 
-My advice, first you have to understand your problem and situation before decide what data structure to use.
+My advice, first you have to understand your problem and situation before decide which data structure to use.
 
-It has four basic operations: 
+Lists has four basic operations: 
 - Push: Add a node at the end.
-- Pop: Remove a node at the start.
+- Pop:  removes the item at the given index
 - atPos: A node at a certain position.
-- indexOf: Search an information through the List.
+- indexOf: Search a node information through the List.
 
 ## Implement a Singly Linked List
 {: #implement}
 
-Today, right here, right now, I am going to implement a singly linked list, buut you can access other implementation on my git.
+Today, right here, right now, I am going to implement a singly linked list, but you can access other implementation on my git.
 
-[See the code](https://github.com/giovannabbottino/notebook/)
+[See the code](https://github.com/giovannabbottino/notebook/tree/master/data_structure/list)
 
 Just like in the [Queue]({{site.baseurl}}/data_structure/list/queue) or the [Stack]({{site.baseurl}}/data_structure/list/stack) you're going to need a Node, we are going to use a *struct* in C. *Struct* group variables under the same data. The idea is to allow you to store and group data into a single data category
 
 This Node can be a Character or a Book whatever you need, you can change it to whatever you want, this is just an example. But, it needs to have a reference to the *next* Node, we are going to use this pointer as a guide through the List, so don't forget about that.
 
-If you are looking for a Doubly List, add the previous Node.
+If you are looking for a Doubly List, add the pointers to the previous Node.
 
 ```c
 // your struct 
@@ -61,7 +61,7 @@ typedef struct node{
     // struct node *prev;
 }Node;
 ```
-And you can initialize as we did before in others [data structures]({{site.baseurl}}/data_structure). With the information, but the pointer as *NULL*.
+And you can initialize it as we did before in the others [data structures]({{site.baseurl}}/data_structure). With the information, but the pointer as *NULL*.
 
 ```c
 Node *createNode(int info){
@@ -72,7 +72,7 @@ Node *createNode(int info){
 }
 ```
 
-We have our Node iniatialize, so lets make another *struct* in C to represent our List. As said before, we have a *head* and a *tail*, the beging and the end.
+We have our Node iniatialized, so lets make another *struct* in C to represent our List. As said before, we have a *head* and a *tail*, the beging and the end.
 
 
 ```c
@@ -82,7 +82,7 @@ typedef struct list{
 } List;
 ```
 
-Our List is empty so we need to point both *head* and *tail* to null and also set size as zero.
+Our List is empty so we need to point both *head* and *tail* to null and also set its size to zero.
 
 ```c
 List *createList(){
@@ -93,9 +93,9 @@ List *createList(){
 }
 ```
 
-To populate the List, the *push* can be used. This *push* need a valid List and Node. 
+To populate the List, we will use the *push* function. This *push* needs a valid List and Node. 
 
-There is two conditions to push, when the list is empty and when the list is not empty. When is empty you need to cast the *head* and the *tail* to be the Node. In others conditions you have to define the *next* in the *tail* to be the new Node. This way, when you push it to the end, it will have a *next* pointer to to the Node.
+There is two conditions to push, when the list is empty and when the list is not empty. When is empty you need to cast the *head* and the *tail* to be the Node. In others conditions you have to define the *next* in the *tail* to be the new Node. This way, when you push it to the end, it will have a pointer *next* to to the Node.
 
 Now you are ready to finally update the tail to the Node. 
 
@@ -113,26 +113,9 @@ void push(List * list, Node * node){
 }
 ```
 
-The *pop*, I promise it is easier to understand. To *pop* a list, first it needed to have an item, if the *size* is equal to zero you don't need to *pop* it. If the *size* is different to zero, we are going to need an auxiliar Node that is the first Node in the List. 
-
-Update the *head* to be the *next* at this auxiliar. With that, you can decrease the *size* and free the auxiliar.
-
-```c
-void pop(List * list){
-    if(list->size == 0){
-        return;
-    }
-    Node * aux = list->head;
-
-    list->head = aux->next;
-    free(aux);
-    list->size--;
-}
-```
-
 We already saw, basically, everything studying about [Queue]({{site.baseurl}}/data_structure/list/queue) or the [Stack]({{site.baseurl}}/data_structure/list/stack). Now comes the fun part: the *atPos* and the *indexOf*.
 
-*atPos*, a function to access a item in a certain position, will need a List and an *index* of the position. If this *index* is not bettewn the List *size* and zero, it is invalid. In cases you can continue, you are going to do a loop through the List and stop it if you find the index.
+*atPos* is a function to access a item in a certain position, will need a List and an *index* of the position. If this *index* is not bettewn the List *size* and zero, it is invalid. Other wise you are going to do a loop through the List and stop it when you find the index.
 
 ```c
 Node *atPos(List * list, int index){
@@ -151,7 +134,7 @@ Node *atPos(List * list, int index){
 }
 ```
 
-The same logic applies to *indexOf*. Use the auxiliar to search the right Node through the List.
+The same logic aplies to indexOf but we use an auxiliar node to help us search for our wanted node through the list
 
 ```c
 int indexOf(List *list, Node *node){
@@ -164,6 +147,49 @@ int indexOf(List *list, Node *node){
     }
     return -1;
 }
+```
+
+
+The *pop*, I promise it is easier to understand if you already have the *atPos*. To *pop* a position in the list, first the position has to be valid. So create a condition to verify it.
+
+```c
+void pop(List *list, int index){
+    if ( index < 0 || index > size(list))
+        printf("Invalid position!\n");
+```
+Ok, *index* is valid. Now, we have some cases, 1- when the index is at the first position or 2-when the index is at the last position or 3- the index is any other.
+
+Case 1
+We are going to need an auxiliar Node that is the first Node in the List. Update the *head* to be the *next* at this auxiliar. With that, you can decrease the *size* and free the auxiliar.
+
+Case 2
+We are also going to need an auxiliar Node, but this time is the last but one in the List. Free the last position. Update the *tail* to be the auxiliar and you can decrease the *size*.
+
+Case 3
+This time, colect the node *after* and *before* the index. Free the node at the *index* and update the *next* in the *before* to the *after*. 
+
+```c
+void pop(List *list, int index){
+    if ( index < 0 || index > size(list)){
+        printf("Invalid position!\n");
+    } else if (index==0){
+        Node * aux = list->head;
+        list->head = aux->next;
+        free(aux);
+    } else if(index == size(list) - 1){ 
+        Node *aux = atPos(list, size(list) - 2);
+        free(atPos(list,index));
+        aux->next = NULL;
+        list->tail = aux;
+    } else{
+        Node *after = atPos(list, index+1);
+        Node *before = atPos(list, index-1);
+        free(atPos(list,index));
+        before->next = after;
+    }
+    list->size--;
+}
+    
 ```
 
 ## The [Big-O notation]({{site.baseurl}}/algorithm/computational_complexity#bigO)
