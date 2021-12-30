@@ -134,7 +134,7 @@ Node *atPos(List * list, int index){
 }
 ```
 
-The same logic aplies to indexOf but we use an auxiliar node to help us search for our wanted node through the list
+The same logic aplies to indexOf but we use an auxiliar node to help us search for our wanted node throughout the list
 
 ```c
 int indexOf(List *list, Node *node){
