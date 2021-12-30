@@ -33,7 +33,7 @@ void push_back(List *list, Node *node);
 void insert(List *list, Node *node, int index);
 void pop_front(List *list);
 void pop_back(List *list);
-void erase(List *list, int index);
+void pop(List *list, int index);
 void clear(List *list);
 // print
 void printList(List *list);
@@ -66,22 +66,18 @@ int main(){
 
     // 3 0 2 1
     insert(list, createNode(0), 0);
-    printf("front: %d \tback: %d size: %d\n", front(list)->info, back(list)->info, size(list));
     insert(list, createNode(1), 1);
-    printf("front: %d \tback: %d size: %d\n", front(list)->info, back(list)->info, size(list));
     insert(list, createNode(2), 1);
-    printf("front: %d \tback: %d size: %d\n", front(list)->info, back(list)->info, size(list));
     insert(list, createNode(3), 0);
-    printf("front: %d \tback: %d size: %d\n", front(list)->info, back(list)->info, size(list));
     
     printList(list);
 
     printf("front: %d \tback: %d \tsize: %d\n", front(list)->info, back(list)->info, size(list));
-    erase(list, 3);
+    pop(list, 3);
     printf("front: %d \tback: %d \tsize: %d\n", front(list)->info, back(list)->info, size(list));
-    erase(list, 1);
+    pop(list, 1);
     printf("front: %d \tback: %d \tsize: %d\n", front(list)->info, back(list)->info, size(list));
-    erase(list, 0);
+    pop(list, 0);
     
     for (int i = 0; i<5; i++){
         Node * node = createNode(i);
@@ -239,7 +235,7 @@ void pop_back(List *list){
         list->size--;
     }
 }
-void erase(List *list, int index){
+void pop(List *list, int index){
     if (index < 0 || index > size(list))
         printf("Invalid position!\n");
     else {
@@ -249,9 +245,9 @@ void erase(List *list, int index){
             pop_back(list);
         }
         else{
-            free(atPos(list,index));
             Node *after = atPos(list, index+1);
             Node *before = atPos(list, index-1);
+            free(atPos(list,index));
             before->next = after;
             list->size--;
         }

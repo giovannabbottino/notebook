@@ -33,7 +33,7 @@ void push_back(List *list, Node *node);
 void insert(List *list, Node *node, int index);
 void pop_front(List *list);
 void pop_back(List *list);
-void erase(List *list, int index);
+void pop(List *list, int index);
 void clear(List *list);
 // print
 void printList(List *list);
@@ -82,11 +82,13 @@ int main(){
     printInverseList(list);
 
     printf("front: %d \tback: %d \tsize: %d\n", front(list)->info, back(list)->info, size(list));
-    erase(list, 3);
+    pop(list, 3);
     printf("front: %d \tback: %d \tsize: %d\n", front(list)->info, back(list)->info, size(list));
-    erase(list, 1);
+    pop(list, 1);
     printf("front: %d \tback: %d \tsize: %d\n", front(list)->info, back(list)->info, size(list));
-    erase(list, 0);
+    pop(list, 0);
+    
+    clear(list);
     
     for (int i = 0; i<5; i++){
         Node * node = createNode(i);
@@ -248,7 +250,7 @@ void pop_back(List *list){
         list->size--;
     }
 }
-void erase(List *list, int index){
+void pop(List *list, int index){
     if (index < 0 || index > size(list))
         printf("Invalid position!\n");
     else {
