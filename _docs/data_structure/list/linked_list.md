@@ -154,7 +154,7 @@ The *pop*, I promise it is easier to understand if you already have the *atPos*.
 
 ```c
 void pop(List *list, int index){
-    if ( index < 0 || index > size(list))
+    if ( index < 0 || index > list->size)
         printf("Invalid position!\n");
 ```
 Ok, *index* is valid. Now, we have some cases, 1- when the index is at the first position or 2-when the index is at the last position or 3- the index is any other.
@@ -170,14 +170,14 @@ This time, colect the node *after* and *before* the index. Free the node at the 
 
 ```c
 void pop(List *list, int index){
-    if ( index < 0 || index > size(list)){
+    if ( index < 0 || index > list->size){
         printf("Invalid position!\n");
     } else if (index==0){
         Node * aux = list->head;
         list->head = aux->next;
         free(aux);
-    } else if(index == size(list) - 1){ 
-        Node *aux = atPos(list, size(list) - 2);
+    } else if(index == list->size - 1){ 
+        Node *aux = atPos(list, list->size - 2);
         free(atPos(list,index));
         aux->next = NULL;
         list->tail = aux;
@@ -331,14 +331,14 @@ void push(List * list, Node * node){
 }
 
 void pop(List *list, int index){
-    if ( index < 0 || index > size(list)){
+    if ( index < 0 || index > list->size){
         printf("Invalid position!\n");
     } else if (index==0){
         Node * aux = list->head;
         list->head = aux->next;
         free(aux);
-    } else if(index == size(list) - 1){ 
-        Node *aux = atPos(list, size(list) - 2);
+    } else if(index == list->size - 1){ 
+        Node *aux = atPos(list, list->size - 2);
         free(atPos(list,index));
         aux->next = NULL;
         list->tail = aux;
