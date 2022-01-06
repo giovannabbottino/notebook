@@ -31,7 +31,7 @@ It basically has three operations, Push, Pop and *top*. See image below for illu
 - Pop: removes an item at the beginning of the stack
 - Top: get the first item in the stack
 
-Why use a stack? In cases where you only need *top* access and the order is Last In, First Out (LIFO).
+When use a stack? In cases where you only need *top* access and the order is Last In, First Out (LIFO).
 {: #why}
 
 ## Implement a Stack

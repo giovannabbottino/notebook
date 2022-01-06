@@ -35,7 +35,7 @@ It basically has four operations, Enqueue, Dequeue, front and rear. See image be
 - Dequeue: removes an item at the beginning of the queue
 - Front: get the first item in the queue
 
-Why use a queue? In cases where you only need *front* and *rear* access and the order is First In, First Out (FIFO).
+Whenn use a queue? In cases where you only need *front* and *rear* access and the order is First In, First Out (FIFO).
 {: #why}
 
 ## Implement a Queue

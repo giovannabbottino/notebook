@@ -15,7 +15,7 @@ How to [implement](#implement) a Linked List?
 
 I hope that you already know what is a [list]({{site.baseurl}}/data_structure/list). You can read about it [here]({{site.baseurl}}/data_structure/list). 
 
-There are three types of linked lists: Singly, Doubly, and Circular (Singly or Doubly). 
+There are three main types of linked lists: Singly, Doubly, and Circular (Singly or Doubly). 
 
 In singly and doubly, you can find a *head* and a *tail*, the difference remains that in a singly linked list the node references only to the *next* element. A doubly linked list has two pointers, one to the *next* node and another to the *previous* node. In those cases, the *next* in last node and *prev* in the first node reference is equal to NULL. That changes in the circular linked list, at the last node the *next* reference is equal to the *head* and the first node the *prev* reference is equal to the *tail*. You can see the image to understand better. 
 
