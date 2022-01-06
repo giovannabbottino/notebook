@@ -146,6 +146,8 @@ Node *removeNode(Node *node, int data){
 
 But how we remove it? 
 
+We need to know if this Node is a Leaf, it easier to just *free* a Leaf. 
+
 ```c
 if (node->left == NULL & node->right == NULL){
     free(node);
