@@ -12,9 +12,9 @@ Tree
 What is a tree?
 {: .fs-6 .fw-300  }
 
-When you think of a tree, what do you expect? For **me**, it's a plant, but anything resembling a tree has divisions and branches, root and leaf. We are going to follow that logic.
+When you think of a tree, what do you expect? To **me**, it's a plant, I can also define anything resembling a tree as something that has divisions and branches, root and leaf. We are going to follow that logic.
 
-Now try connecting it to [data structure]({{site.baseurl}}/data_structure). How could you implement this?
+Now try connecting it to [data structures]({{site.baseurl}}/data_structure). How could you implement this?
 
 A tree is a nonlinear hierarchical [data structure]({{site.baseurl}}/data_structure) in which elements are not stored in contiguous memory locations. In a tree each elements are nodes connected by edges where no reference is duplicated and none points to the start [[2]](#ref2).
 
@@ -28,26 +28,6 @@ Why use a tree?
 {: #why} 
 
 They are used for faster response time during a search.
-
-### Types of Tree
-
-#### Binary Tree
-
-In a binary tree, the nodes can have a maximum of two child.
-
-##### Binary Search Tree
-
-A binary tree subtype, arranged so that each node on the left side must have a value less than the value of its parent node. Inverse logic applies to the right side, which must have a higher value than its parent node. In this way, it allows faster search, query and addition / removal of data.
-
-###### AVL Tree
-
-The Adelson-Velsky-Landis (AVL) tree is a self-balancing binary search tree in which each node maintains extra information called a balance factor whose value is either -1, 0 or +1. The child nodes are rebalanced when the height difference exceeds one.
-
-#### B-Tree
-
-A generalized form of the binary search tree. Unlike a binary tree, allows its nodes to have more than two child and each node can contain more than one key. The B-Tree is a type of self-balancing tree that sorts data in logarithmic time. 
-
-As follown there are some important terms to know about a tree.  
 
 ### [Tree Terminologies](#ref1)
 - Root − The node at the top of the tree is called root. There is only one root per tree and one path from the root node to any node.
@@ -84,6 +64,27 @@ As follown there are some important terms to know about a tree.
 - Inorder: Visit all the nodes in the left, then the root node and finally all the nodes in the right.
 - Preorder: Visit the root node, then all the nodes in the left and finally all the nodes in the right.
 - Postorder: Visit all the nodes in the left, then all the nodes in the right and finally the root node.
+
+### Types of Tree
+
+#### Binary Tree
+
+In a binary tree, the nodes can have a maximum of two children.
+
+##### Binary Search Tree
+
+A binary tree subtype, arranged so that each node on the left side must have a value less than the value of its parent node. Inverse logic applies to the right side, which must have a higher value than its parent node. In this way, it allows faster search, query and addition / removal of data.
+
+###### AVL Tree
+
+The Adelson-Velsky-Landis (AVL) tree is a self-balancing binary search tree in which each node maintains extra information called a balance factor whose value is either -1, 0 or +1. The child nodes are rebalanced when the height difference exceeds one.
+
+#### B-Tree
+
+A generalized form of the binary search tree. Unlike a binary tree, allows its nodes to have more than two child and each node can contain more than one key. The B-Tree is a type of self-balancing tree that sorts data in logarithmic time. 
+
+As follown there are some important terms to know about a tree.  
+
 
 ## Implement a Binary Search Tree
 {: #implement}
@@ -218,11 +219,11 @@ Node *removeNode(Node * node, int key){
 }
 ```
 
-You alredy know how to access, insert and delete a Node from the SBT. Now let's, understand the logic for Inorder, Preorder and Posorder. For that, we will use some print. 
+You alredy know how to access, insert and delete a Node from the BST. Now let's, understand the logic for Inorder, Preorder and Posorder. To achieve this, we will use some print. 
 
-Like we said before in tree traversal, each one followns a order. Inorder is left and then root, Preorder is root and then left and finally Postorder left and then right. 
+Like we said before in tree traversal, each one follows a order. Inorder is left and then root, Preorder is root and then left and finally Postorder left and then right. 
 
-Using a recursive function and prints we can just:
+Using a recursive function and prints we can just make recursives calls to print first the left, then the root and finally the right.
 
 ```c
 void printTreeInorder(Node * node){
@@ -234,7 +235,7 @@ void printTreeInorder(Node * node){
 }
 ```
 
-And the same logic aplies to:
+And the same logic aplies to the Preorder and Postorder. Make recursives calls to print in the chosen order.
 
 ```c
 void printTreePreorder(Node * node){
