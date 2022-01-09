@@ -29,6 +29,8 @@ Why use a tree?
 
 They are used for faster response time during a search.
 
+As follown there are some important terms to know about a tree.  
+
 ### [Tree Terminologies](#ref1)
 - Root − The node at the top of the tree is called root. There is only one root per tree and one path from the root node to any node.
 
@@ -82,9 +84,6 @@ The Adelson-Velsky-Landis (AVL) tree is a self-balancing binary search tree in w
 #### B-Tree
 
 A generalized form of the binary search tree. Unlike a binary tree, allows its nodes to have more than two child and each node can contain more than one key. The B-Tree is a type of self-balancing tree that sorts data in logarithmic time. 
-
-As follown there are some important terms to know about a tree.  
-
 
 ## Implement a Binary Search Tree
 {: #implement}
