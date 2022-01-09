@@ -12,7 +12,7 @@ Tree
 What is a tree?
 {: .fs-6 .fw-300  }
 
-When you think of a tree, what do you expect? For **me**, it's a plant, but anything resembling a tree has divisions and branches, root and leaf. We are going to follow that logic.  
+When you think of a tree, what do you expect? For **me**, it's a plant, but anything resembling a tree has divisions and branches, root and leaf. We are going to follow that logic.
 
 Now try connecting it to [data structure]({{site.baseurl}}/data_structure). How could you implement this?
 
@@ -33,7 +33,7 @@ They are used for faster response time during a search.
 
 #### Binary Tree
 
-In a binary tree, the nodes can have a maximum of two children.
+In a binary tree, the nodes can have a maximum of two child.
 
 ##### Binary Search Tree
 
@@ -45,7 +45,7 @@ The Adelson-Velsky-Landis (AVL) tree is a self-balancing binary search tree in w
 
 #### B-Tree
 
-A generalized form of the binary search tree. Unlike a binary tree, allows its nodes to have more than two children and each node can contain more than one key. The B-Tree is a type of self-balancing tree that sorts data in logarithmic time. 
+A generalized form of the binary search tree. Unlike a binary tree, allows its nodes to have more than two child and each node can contain more than one key. The B-Tree is a type of self-balancing tree that sorts data in logarithmic time. 
 
 As follown there are some important terms to know about a tree.  
 
@@ -112,7 +112,7 @@ Node *createNode(int data){
 }
 ```
 
-Now we are ready to create the tree. It's a Binary Search Tree, so for populate our tree we need to verify the size of the data. Is it bigger then the parent? So it is going to be the right. Is it smaller then the parent? Left then. There is no parent? Create the node.
+Now we are ready to create the tree. It's a Binary Search Tree, so for populate our tree we need to verify the size of the data. For that we are going to make recursive calls. Is it bigger then the parent? So it is going to be the right. Is it smaller then the parent? Left then. There is no parent? Create the node.
 
 ```c
 Node *createTree(Node *node, int data){
@@ -127,17 +127,18 @@ Node *createTree(Node *node, int data){
     return node;
 }
 ```
-To remove it's a litle more complicated. First, we need to make sure that there is a tree, is there a Node? After that we need to **find** the Node in the tree that contains that data, for that we  are going to make recursive calls. Is the data smaller then the data of Node? Go left. Is the data bigger then the data of the Node? Go right. Is it the data? Remove it.
 
+To remove it's a litle more complicated. First, we need to make sure that there is a tree, is there a Node? After that we need to **find** the Node in the tree that contains that data. Is the data smaller then the data of Node? Go left. Is the data bigger then the data of the Node? Go right. Is it the data? Remove it.
 
 ```c
 Node *removeNode(Node *node, int data){
     if (node==NULL){
         return NULL;
-    } else if ( data < node->data){
-        node->left = removeNode(node, data);
-    } else if ( data > node->data){
-        node->right = removeNode(node, data);
+    } 
+    if ( key < node->key){
+        node->left = removeNode(node->left, key);
+    } else if ( key > node->key){
+        node->right = removeNode(node->right, key);
     } else {
         // remove it
     }
@@ -146,25 +147,112 @@ Node *removeNode(Node *node, int data){
 
 But how we remove it? 
 
-We need to know if this Node is a Leaf, it easier to just *free* a Leaf. 
+We need to know if this Node is a Leaf, it easier to just *free* a Leaf. When there is a child but only in one side, update the location of the child. He is going to be the new Node.
 
 ```c
-if (node->left == NULL & node->right == NULL){
+if(node->left == NULL){
+    Node *aux =  node->right;
     free(node);
-    node = NULL;
-} else if(node->left == NULL){
-    Node *aux = node;
-    node = node->right;
-    free(aux);
-
+    return aux;
 } else if(node->right == NULL){
-    Node *aux = node;
+    Node *aux =  node->left;
+    free(node);
+    return aux;
+} else{
+    // child on both sides
+} 
+return node;
+
+```
+
+The last case is when there is child on both sides. When this happens get the inorder successor. How? Lets make a recursive function to that. 
+
+```c
+Node *inorderSuccessor(Node *node) {
+  while (node && node->left != NULL)
     node = node->left;
-    free(aux);
+
+  return node;
 }
 ```
 
+Now, replace the node key with the inorder successor key and remove the inorder from the original position. 
 
+```c
+Node *inorder = inorderSuccessor(node->right);
+
+node->key = inorder->key;
+
+node->right = removeNode(node->right , inorder->key);
+```
+
+The final function is similar to this. 
+
+```c
+Node *removeNode(Node * node, int key){
+    if (node==NULL){
+        return NULL;
+    } 
+    if ( key < node->key){
+        node->left = removeNode(node->left, key);
+    } else if ( key > node->key){
+        node->right = removeNode(node->right, key);
+    } else {
+        if(node->left == NULL){
+            Node *aux =  node->right;
+            free(node);
+            return aux;
+        } else if(node->right == NULL){
+            Node *aux =  node->left;
+            free(node);
+            return aux;
+        } else{
+            Node *inorder = inorderSuccessor(node->right);
+
+            node->key = inorder->key;
+
+            node->right = removeNode(node->right , inorder->key);
+        } 
+        return node;
+    }
+}
+```
+
+You alredy know how to access, insert and delete a Node from the SBT. Now let's, understand the logic for Inorder, Preorder and Posorder. For that, we will use some print. 
+
+Like we said before in tree traversal, each one followns a order. Inorder is left and then root, Preorder is root and then left and finally Postorder left and then right. 
+
+Using a recursive function and prints we can just:
+
+```c
+void printTreeInorder(Node * node){
+    if (node){ 
+        printTreeInorder(node->left);
+        printf("%d ", node->key);
+        printTreeInorder(node->right);
+    }
+}
+```
+
+And the same logic aplies to:
+
+```c
+void printTreePreorder(Node * node){
+    if (node){
+        printf("%d ", node->key);
+        printTreePreorder(node->left);
+        printTreePreorder(node->right);
+    }
+}
+ 
+void printTreePostorder(Node * node){
+    if (node){
+        printTreePostorder(node->left);
+        printTreePostorder(node->right);
+        printf("%d ", node->key);
+    }
+}
+```
 ## The [Big-O notation]({{site.baseurl}}/algorithm/computational_complexity#bigO)
 
 <table>
@@ -228,107 +316,123 @@ if (node->left == NULL & node->right == NULL){
  * giovannabbottino@gmail.com
  */
 
+/*
+ * Giovanna Borges Bottino 
+ * giovannabbottino@gmail.com
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
 typedef struct node{
-    int data;
-    struct Node *left;
-    struct Node *right;
+    int key;
+    struct node *left;
+    struct node *right;
 } Node;
 
-Node *createNode(int data);
-Node *createTree(Node *tree, int data);
-Node *removeNode(Node *tree, int data);
-void printTreeInorder(Node *node);
-void printTreePreorder(Node *node);
-void printTreePostorder(Node *node);
+Node * createNode(int key);
+Node * createTree(Node * tree, int key);
+Node * removeNode(Node * tree, int key);
+Node * inorderSuccessor(Node * node);
+void printTreeInorder(Node * node);
+void printTreePreorder(Node * node);
+void printTreePostorder(Node * node);
 
 int main(){
     Node * tree = NULL;
-    int data;
+    int key = 10;
+    tree = createTree(tree, key);
 
-    while(scanf(" %d", &data) != EOF){
-        tree = createTree(tree, data);
-    }
     printTreePreorder(tree);
-    printf(".\n");
+    
     printTreeInorder(tree);
-    printf(".\n");
+    
     printTreePostorder(tree);
-    printf(".\n");
+
+    removeNode(tree, key);
 
     return 0;
 }
 
-Node *createNode(int data){
+Node *createNode(int key){
     Node* node = (Node *)malloc(sizeof(Node));
  
-    node->data = data;
+    node->key = key;
     
     node->left = NULL;
     node->right = NULL;
     return node;
 }
 
-Node *createTree(Node *node, int data){
+Node *createTree(Node * node, int key){
     if (node == NULL)
-        return createNode(data);
+        return createNode(key);
  
-    if (data < node->data)
-        node->left = createTree(node->left, data);
-    else if (data > node->data)
-        node->right = createTree(node->right, data);
+    if (key < node->key)
+        node->left = createTree(node->left, key);
+    else if (key > node->key)
+        node->right = createTree(node->right, key);
  
     return node;
 }
 
-Node *removeNode(Node *node, int data){
+Node *removeNode(Node * node, int key){
     if (node==NULL){
         return NULL;
-    } else if ( data < node->data){
-        node->left = removeNode(node, data);
-    } else if ( data > node->data){
-        node->right = removeNode(node, data);
+    } 
+    if ( key < node->key){
+        node->left = removeNode(node->left, key);
+    } else if ( key > node->key){
+        node->right = removeNode(node->right, key);
     } else {
-        if (node->left == NULL & node->right == NULL){
+        if(node->left == NULL){
+            Node *aux =  node->right;
             free(node);
-            node = NULL;
-        } else if(node->left == NULL){
-            Node *aux = node;
-            node = node->right;
-            free(aux);
-
+            return aux;
         } else if(node->right == NULL){
-            Node *aux = node;
-            node = node->left;
-            free(aux);
-        }
+            Node *aux =  node->left;
+            free(node);
+            return aux;
+        } else{
+            Node *inorder = inorderSuccessor(node->right);
+
+            node->key = inorder->key;
+
+            node->right = removeNode(node->right , inorder->key);
+        } 
+        return node;
     }
 }
 
-void printTreeInorder(Node *node){
-    if (node){
+Node *inorderSuccessor(Node * node) {
+  while (node && node->left != NULL)
+    node = node->left;
+
+  return node;
+}
+
+void printTreeInorder(Node * node){
+    if (node){ 
         printTreeInorder(node->left);
-        printf("%d ", node->data);
+        printf("%d ", node->key);
         printTreeInorder(node->right);
     }
 }
-
-void printTreePreorder(Node *node){
-    if (node){  
-        printf("%d ", node->data);
+ 
+void printTreePreorder(Node * node){
+    if (node){
+        printf("%d ", node->key);
         printTreePreorder(node->left);
         printTreePreorder(node->right);
     }
 }
-   
-void printTreePostorder(Node *node){
+ 
+void printTreePostorder(Node * node){
     if (node){
         printTreePostorder(node->left);
         printTreePostorder(node->right);
-        printf("%d ", node->data);
+        printf("%d ", node->key);
     }
 }
 ```
