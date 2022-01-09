@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Tree
-nav_order: 1
+nav_order: 2
 description: 'What is a tree?'
 parent: Data Structure
 ---
@@ -27,9 +27,9 @@ A tree is a nonlinear hierarchical [data structure]({{site.baseurl}}/data_struct
 Why use a tree?
 {: #why} 
 
-They are used for faster response time during a search.
+They are used for a faster response time during a search.
 
-As follown there are some important terms to know about a tree.  
+But first there are some important terms we need to know about trees.  
 
 ### [Tree Terminologies](#ref1)
 - Root − The node at the top of the tree is called root. There is only one root per tree and one path from the root node to any node.
@@ -73,11 +73,11 @@ As follown there are some important terms to know about a tree.
 
 In a binary tree, the nodes can have a maximum of two children.
 
-##### Binary Search Tree
+#### Binary Search Tree (BST)
 
 A binary tree subtype, arranged so that each node on the left side must have a value less than the value of its parent node. Inverse logic applies to the right side, which must have a higher value than its parent node. In this way, it allows faster search, query and addition / removal of data.
 
-###### AVL Tree
+#### AVL Tree
 
 The Adelson-Velsky-Landis (AVL) tree is a self-balancing binary search tree in which each node maintains extra information called a balance factor whose value is either -1, 0 or +1. The child nodes are rebalanced when the height difference exceeds one.
 
@@ -112,7 +112,7 @@ Node *createNode(int data){
 }
 ```
 
-Now we are ready to create the tree. It's a Binary Search Tree, so for populate our tree we need to verify the size of the data. For that we are going to make recursive calls. Is it bigger then the parent? So it is going to be the right. Is it smaller then the parent? Left then. There is no parent? Create the node.
+Now we are ready to create the tree. It's a Binary Search Tree, so to populate our tree we need to check the size of the data. For that we are going to make recursive calls. Is it bigger then the parent? So it is going to the right. Is it smaller then the parent? Left then. There is no parent? Create the node.
 
 ```c
 Node *createTree(Node *node, int data){
@@ -311,11 +311,6 @@ void printTreePostorder(Node * node){
 {: #code}
 
 ```c
-/*
- * Giovanna Borges Bottino 
- * giovannabbottino@gmail.com
- */
-
 /*
  * Giovanna Borges Bottino 
  * giovannabbottino@gmail.com
