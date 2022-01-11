@@ -18,9 +18,9 @@ What are data they?
 There are several data structures used in programming. Here we are going to talk about four of then, lists, trees, graphs, hash tables and their variations which are widely used in application implementation [[1]](#ref1). Here are some examples:
 
 - [Lists]({{site.baseurl}}/data_structure/list): Processes run on an operating system ([Queue]({{site.baseurl}}/data_structure/list/queue)); function calls in a code interpreter ([Stack]({{site.baseurl}}/data_structure/list/stack));
-- Trees: Search applications with constant data entry (Binary Trees);
+- [Trees]({{site.baseurl}}/data_structure/tree): Search applications with constant data entry ([Binary Trees]({{site.baseurl}}/data_structure/tree));
 - Graphs: Social networks; connection suggestion [algorithms]({{site.baseurl}}/algorithm);
-- Hash Tables: Databases; implementation of compilers.
+- [Hash Tables]({{site.baseurl}}/data_structure/hash): Databases; implementation of compilers.
 
 Which structure to choose? The answer depends on the application. Learning data structures and [algorithms]({{site.baseurl}}/algorithm)  allow us to write more efficient and optimized computer programs. Here we are going to talk about the main core concepts. I'll explain it in detail and with a  hands-on-approach, where I'll be implementing each structure, so we can better understand how they work.
 
