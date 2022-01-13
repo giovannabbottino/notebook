@@ -13,7 +13,7 @@ Personal notebook with notes on data structure, sorting algorithm, search and so
     - [X] [circular_doubly_linked_list](https://github.com/giovannabbottino/notebook/tree/master/data_structure/list/circular_doubly_linked_list.c)
     - [X] [binary search tree](https://github.com/giovannabbottino/notebook/tree/master/data_structure/tree.c)
     - [ ] graph
-    - [ ] hash table
+    - [ ] [hash table](https://github.com/giovannabbottino/notebook/tree/master/data_structure/hash.c)
 - [ ] SORT:
     - [ ] bubble
     - [ ] insertion
