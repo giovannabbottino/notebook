@@ -29,7 +29,7 @@ The hash collision can be solved using chaining or open addressing.
 
 ### Chaining
 
-This solution uses a [Doubly Linked List]({{site.baseurl}}/data_structure/list/linked_list) to store these elements in the same index. For example, if *j* is the index for multiple elements, it contains a pointer to the head of the list of elements. If no element is present, j contains NIL.
+This solution uses a [Doubly Linked List]({{site.baseurl}}/data_structure/list/linked_list) to store these elements in the same index.
 
 ### Open Addressing
 
@@ -46,6 +46,23 @@ In this case of collision we apply another hash function <s>or the same with the
 ## Implement a Hash Table
 {: #implement}
 
+As always our [data structure]({{site.baseurl}}/data_structure) will use a struct togroup variables under the same data. This our Node with a key and value.
+
+If you are doing a Chaining 
+
+
+```c
+/* Node for storing an item in a Linked List */
+struct node 
+{
+	int key;
+	int value;
+	struct node *next;
+};
+```
+our hash table will be an array of linked lists and will be hashed by the first letter of their username. A will go to position 0, B to 1, and so on.
+
+The struct for the this hash table will be the same as the struct for our previous linked list
 
 ## The [Big-O notation]({{site.baseurl}}/algorithm/computational_complexity#bigO)
 

@@ -41,7 +41,7 @@ Whenn use a queue? In cases where you only need *front* and *rear* access and th
 ## Implement a Queue
 {: #implement}
 
-You're going to need a Node, we are going to use a *struct* in C. *Struct* group variables under the same data. The idea is to allow you to store and group data into a single data category
+You're going to need a Node, we are going to use a *struct* in C. *Struct* group variables under the same data. The idea is to allow you to store and group data into a single data category.
 
 This Node can be a Person or a Car whatever you need, you can change it to whatever you want, this is just an example. But, it needs to have a pointer to the next Node, we are going to use this pointer as a guide through the Queue, so don't forget about that.
 
