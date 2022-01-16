@@ -26,7 +26,9 @@ int attempt = 0;
 int hashing(int key);
 Node * createNode(int key, int data);
 Hash_table * createHashTable();
-Hash_table * push(Node * node, Hash_table * hash_table);
+Hash_table * push(Hash_table * hash_table, Node * node);
+void pop(Hash_table * hash_table, Node * node);
+Node * search(Hash_table * hash_table, int key);
 void erase(Hash_table* hash_table);
 void printHashTable(Hash_table * hash_table);
 
@@ -35,13 +37,28 @@ int main(){
     Hash_table * hash_table = createHashTable();
     Node * node = createNode(1, 1);
 
-    hash_table = push(node, hash_table);
+    hash_table = push(hash_table, node);
 
     node = createNode(1, 2);
 
-    hash_table = push(node, hash_table);
+    hash_table = push(hash_table, node);
+
+    node = createNode(4, 3);
+
+    hash_table = push(hash_table, node);
+    printHashTable(hash_table);
+
+    Node * searchNode = search(hash_table, node->key);
+
+    printf("Key: %d\tData: %d\n", searchNode->key, searchNode->data);
 
     printHashTable(hash_table);
+
+    pop(hash_table, node);
+
+    printHashTable(hash_table);
+
+    erase(hash_table);
 
     return 0;
 }
@@ -69,7 +86,7 @@ Hash_table * createHashTable(){
     return hash_table;
 }
 
-Hash_table * push(Node * node, Hash_table * hash_table){
+Hash_table * push(Hash_table * hash_table, Node * node){
     int index = hashing(node->key) + (hashing(node->key) * attempt);
 
     Node * at_pos = hash_table->array[index];
@@ -83,27 +100,40 @@ Hash_table * push(Node * node, Hash_table * hash_table){
         printf("There isnt space left\n");
     } else{
         attempt++;
-        hash_table = push(node, hash_table);
+        hash_table = push(hash_table, node);
     }
     return hash_table;
 }
-// falta o pop e search
+
 void pop(Hash_table * hash_table, Node * node) {
-    int index = hashing(node->key);
-    Node * node = hash_table->array[index];
-    int i = 1;
-    while (node != NULL) {
-        if (node != &HT_DELETED_ITEM) {
-            if (strcmp(node->key, key) == 0) {
-                free(node);
-                hash_table->items[index] = &HT_DELETED_ITEM;
-            }
+    int index = hashing(node->key) + (hashing(node->key) * attempt);
+    Node * closestNode = hash_table->array[index];
+    while (closestNode != NULL) {
+        if (closestNode->key == node->key &&  closestNode->data == node->data) {
+            free(closestNode);
+            hash_table->array[index] = NULL;
+            attempt = 0;
+            break;
         }
-        index = hashing(node->key, hash_table->size, i);
-        node = hash_table->array[index];
-        i++;
+        attempt++;
+        index = hashing(node->key) + (hashing(node->key) * attempt);
+        closestNode = hash_table->array[index];
     } 
     hash_table->size--;
+}
+
+Node * search(Hash_table * hash_table, int key) {
+    int index = hashing(key) + (hashing(key) * attempt);
+    Node * closestNode = hash_table->array[index];
+    while (closestNode != NULL) {
+        if (closestNode->key == key) {
+            attempt = 0;
+            return closestNode;
+        }
+        attempt++;
+        index = hashing(key) + (hashing(key) * attempt);
+        closestNode = hash_table->array[index];
+    }
 }
 
 void erase(Hash_table* hash_table) {
@@ -119,7 +149,7 @@ void erase(Hash_table* hash_table) {
 
 void printHashTable(Hash_table * hash_table){
      printf("size: %d\nindex\tkey\tdata\n", hash_table->size);
-     for(int i=0; i<=hash_table->size; i++){
+     for(int i=0; i<hash_table->capacity; i++){
         Node * at_pos = hash_table->array[i];
         if (at_pos != NULL)
             printf("%d\t%d\t%d\n", i, hash_table->array[i]->key, hash_table->array[i]->data);
