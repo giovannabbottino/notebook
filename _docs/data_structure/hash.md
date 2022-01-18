@@ -14,16 +14,16 @@ What is a Hash Table?
 
 A hash table or associative array is a key value lookup. In others words, it is a [data structure]({{site.baseurl}}/data_structure) that stores elements in key-value pairs where the key is a unique integer that is used for indexing the values and the value is the data associated with keys.
 
-You use hash tables because they have a time complexity of O(1). Using a hash table is one of the fastest ways.
+You might want to use hash tables because they have a time complexity of O(1). Using a hash table is one of the fastest ways to search, insert and delete.
 {: #why} 
 
-In a hash table, a new index is processed using the keys. And, the element corresponding to that key is stored in the index. This process is called hashing.
+In a hash table, a new index is processed using keys, and the element corresponding to that key is stored in the index. This process is called hashing.
 
-Hashing is a technique or process of mapping keys, values into the hash table. The efficiency of mapping depends on the efficiency of the hash function used.
+Hashing is a technique or process of mapping keys values into the hash table. The efficiency of mapping depends on the efficiency of the hash function used.
 
 Let a hash function H(x) maps the value x at the index x-1. For example if the list of values is [1,2,3,4,5] it will be stored at positions {0,1,2,3,4} in the Hash table. However, when the hash function generates the same index for multiple keys, there will be a hash collision.
 
-The hash collision can be solved using chaining or open addressing.
+The hash collision can be solved using two techniques, chaining or open addressing.
 
 ## Hash Collision
 
@@ -46,7 +46,7 @@ In this case of collision we apply another hash function <s>or the same with the
 ## Implement a Hash Table
 {: #implement}
 
-As always our [data structure]({{site.baseurl}}/data_structure) will use a struct to group variables under the same data. This is our Node with a key and value.
+As always, our [data structure]({{site.baseurl}}/data_structure) will use a struct to group variables under the same data. This will be our Node with a key and value.
 
 ```c
 struct node 
@@ -65,7 +65,7 @@ Node * createNode(int key, int data){
 }
 ```
 
-Our hash table will be a [list]({{site.baseurl}}/list) of Nodes and need to store it size and capacity. Also, we are going to use a constant value CAPACITY not only here but in all code.
+We are going to build our hash table using a [list]({{site.baseurl}}/list) of Nodes, to accomplish that we will need to store its size and capacity.  Also, we are going to use a constant value CAPACITY, that we will be using on our entire code. 
 
 ```c
 #define CAPACITY 10
@@ -89,7 +89,7 @@ Hash_table * createHashTable(){
 }
 ```
 
-And will be hashed by the key and capacity. A simple and an example of hash function.
+A simple example of a hash function is dividing the key by the capacity. 
 
 ```c
 int hashing(int key){
@@ -97,9 +97,10 @@ int hashing(int key){
 }
 ```
 
-Now, we can implement the three main function in a hash table. Push, pop and search.
+Now, we can implement the three main functions in a hash table. Push, pop and search.
 
-First, lets populate it. We use the hash function here, to collect the index to the array in the hash table. 
+First, lets populate it. We need to use the hash function here, to collect the index to the array in the hash table. 
+
 ```c
 Hash_table * push(Hash_table * hash_table, Node * node){
     int index = hashing(node->key) + (hashing(node->key) * attempt);
@@ -111,9 +112,9 @@ Hash_table * push(Hash_table * hash_table, Node * node){
 }
 ```
 
-This way, could work, but in case of collision it is not that effective. When do we know that happened a collision? Just check the position, if is not null, is not empty then is a collision. 
+This way could work, but in case of collision it is not that effective. When do we know that happened a collision? Just check the position, if it is not null, it is not empty then it is a collision. 
 
-In cases of collision this example will use Double hashing. Create a variable attempt to store how many attempts we have made and help with the double hashin. With this we can control how many times it will recursivelly call push, and stop when it has reached the capacity of the hash table.
+In cases of collision this example will use Double hashing. Create a variable *attempt* to store how many attempts we have made and help with the double hashing. With this we can control how many times it will recursivelly call push, and stop when it has reached the capacity of the hash table.
 
 ```c
 int attempt = 0;
@@ -137,7 +138,7 @@ Hash_table * push(Hash_table * hash_table, Node * node){
 }
 ```
 
-For the pop, we use a loop to verify if the contest of the position is the same as in the Node. The hasing function and attempt variable are also used here, to make the search for the Node quicker.
+For the pop, we use a loop to verify if the contest of the position is the same as in the Node. The hash function and attempt variable are also used here, to make the search for the Node quicker.
 
 ```c
 void pop(Hash_table * hash_table, Node * node) {
@@ -158,7 +159,7 @@ void pop(Hash_table * hash_table, Node * node) {
 }
 ```
 
-The search follown the same logic as in the pop, we use a loop to search for the Node, and use the hashing function and attempt variable to make it quicker.
+The search follows the same logic as in the pop, we use a loop to search for the Node, and use the hashing function and attempt variable to make it quicker.
 ```c
 Node * search(Hash_table * hash_table, int key) {
     int index = hashing(key) + (hashing(key) * attempt);
