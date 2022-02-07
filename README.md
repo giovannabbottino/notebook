@@ -1,5 +1,5 @@
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  ![C](https://img.shields.io/badge/C-Solutions-blue.svg?style=flat&logo=c) 
 # Notebook
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  ![C](https://img.shields.io/badge/Solutions-blue.svg?style=flat&logo=c) 
 
 Personal notebook with notes on data structure, sorting algorithm, search and some other materials.
 
