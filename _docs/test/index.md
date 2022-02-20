@@ -13,7 +13,7 @@ Test
 Why test your app?
 {: .fs-6 .fw-300  }
 
-[Bug, Defect, Error, Failure {: .label .label-red }](#bug) [White Box {: .label .label-red }](#whitebox) [Black Box {: .label .label-red }](#blackbox) [Gray Box {: .label .label-red }](#graybox)
+Bug, Defect, Error, Failure {: .label .label-red } White Box {: .label .label-purple } Black Box {: .label .label-purple } Gray Box {: .label .label-purple }
 
 {: #bug}
 When Software fails, does not work properly, it can lead to many problems such as financial losses, loss of reputation, risk to people's physical integrity, contractual fines. These failures occur because all software development artifacts, from specification and requirements to general documentation, are written by people, and people are prone to making mistakes, regardless of their experience and qualifications.
