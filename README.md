@@ -1,6 +1,5 @@
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![gem](https://img.shields.io/badge/gem-3.2-red)](https://blog.rubygems.org/2020/12/22/3.2.3-released.html)
-
 # Notebook 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![gem](https://img.shields.io/badge/gem-3.2-red)](https://blog.rubygems.org/2020/12/22/3.2.3-released.html)
 
 Personal notebook with notes on data structure, sorting algorithm, search and some other materials.
 
