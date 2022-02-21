@@ -37,7 +37,7 @@ White Box tests are those performed to analyze web applications, where the serve
 
 Basically, White Box is testing the internal coding and infrastructure of a software solution. It mainly focuses on strengthening safeguard, the flow of inputs and outputs through the application, and improving design and usability. [[3]](#ref3). 
 
-All customer information about the network, servers, database and systems that are included in the penetration test scope, and other access information thereto, are provided so that extensive and more comprehensive tests can be performed.
+All customer information about the network, servers, database and systems that are included in the test scope so more comprehensive tests can be performed.
 
 ## Black Box
 {: #blackbox}
@@ -66,7 +66,7 @@ A good example of Gray Box tests are those aimed at analyzing possible security 
 
 Software testing is very important in ensuring system quality control. He must ensure that the system meets all the requirements as the customer requested [[2]](#ref2).
 
-The inputs (inputs) and outputs (outputs) of all software must be reliable. For this, different types of tests are needed to simulate certain behavior of the application, generally before its release from the production environment. Finally, tests are tools that companies use to minimize financial costs and prevent business reputation from decreasing [[2]](#ref2).
+The inputs and outputs of all software must be reliable. For this, different types of tests are needed to simulate certain behavior of the application, generally before its release from the production environment. Finally, tests are tools that companies use to minimize financial costs and prevent business reputation from decreasing [[2]](#ref2).
 
 ## References
 

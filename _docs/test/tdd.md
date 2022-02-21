@@ -40,9 +40,9 @@ This is the difference between test driven development and writing unit tests af
 
 - <p style="color:red">2. Run all tests and see if any of them fail</p>
 
-This step validates that all tests are working correctly and that the new test does not have any errors, without requiring any new code. It can be considered that this step then tests the test itself: it regulates the possibility of a new test passing.
+This step validates that all tests are working correctly and that the new test does not have any errors, without requiring any new code. It can be considered that this step tests the test itself: it regulates the possibility of a new test passing.
 
-The retest should then fail for the expected reason: the functionality was not developed. This builds confidence (on the other hand doesn't exactly guarantee it) that you're testing the right thing, and that the test will only pass the intended cases.
+The retest should then fail for the expected reason: the functionality was not developed. This builds confidence (on the other hand doesn't exactly guarantee it) that you're testing the right thing, and that the test will only pass the intended case.
 
 {: #green}
 - <p style="color:green">3. Write code</p>  
@@ -66,7 +66,7 @@ Starting with another test, the cycle is then repeated, pushing the functionalit
 
 ## Benefits
 
-TDD is has a quick feedback. If you did the function but didn't get a positive test result, it can be modified right away. Because you have to focus specific development problems it create cleaner and simpler code that is also easy to refactor. Bugs are easier to fix and also increase the productivity.
+TDD has a quick feedback. If you did the function but didn't get a positive test result, it can be modified right away. Because you have to focus on specific development problems, it creates cleaner and simpler code that is also easy to refactor. Bugs are easier to fix and also increase the productivity.
 
 ## References
 
