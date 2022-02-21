@@ -13,24 +13,24 @@ Test
 Why test your app?
 {: .fs-6 .fw-300  }
 
-[Bug, Defect, Error, Failure](#bug)
+<a style="color:white" href="#bug">Bug, Defect, Error, Failure</a>
 {: .label .label-red } 
 
-[White Box](#whitebox)
-{: .label .label-green } 
+<a style="color:white" href="#whitebox">White Box</a>
+{: .label .label-purple  } 
 
-[Black Box](#blackbox)
-{: .label .label-green } 
+<a style="color:white" href="#blackbox">Black Box</a>
+{: .label .label-purple  } 
 
-[Gray Box](#graybox)
-{: .label .label-green }
+<a style="color:white" href="#graybox">Gray Box</a>
+{: .label .label-purple  }
 
 {: #bug}
 When Software fails, does not work properly, it can lead to many problems such as financial losses, loss of reputation, risk to people's physical integrity, contractual fines. These failures occur because all software development artifacts, from specification and requirements to general documentation, are written by people, and people are prone to making mistakes, regardless of their experience and qualifications.
 
 We can define errors as a human action that produces an incorrect result. They are often committed by programmers, causing defects. Defects or Bugs are manifestations of an error in the software and if executed, the defect can cause a failure. Failure is the undesirable difference between the observed and the expected, the result of the mistake made, the defect found [[1]](#ref1).  
 
-# White Box 
+## White Box 
 {: #whitebox}
 
 White Box tests are those performed to analyze web applications, where the server configuration and the source code itself are openly analyzed in search of security flaws that could compromise the service [[2]](#ref2). 
@@ -39,21 +39,21 @@ Basically, White Box is testing the internal coding and infrastructure of a soft
 
 All customer information about the network, servers, database and systems that are included in the penetration test scope, and other access information thereto, are provided so that extensive and more comprehensive tests can be performed.
 
-# Black Box
+## Black Box
 {: #blackbox}
 
 It is the closest type of analysis to an external attack, as no information from the customer is provided to the test analyst. That's because it's being tested from an external or end-user perspective. That is the opposite of white box testing because white box is based on the internal operation of an application and is about internal testing [[3]](#ref3). 
 
 The name 'black box' in 'Black Box Testing' symbolizes that we cannot see the inner workings of the software. Therefore, we can only test the end-user experience. Therefore, any type of information for carrying out a Black Box test is acquired through specific hacking techniques on the available services of the target, thus identifying vulnerabilities and possible damage caused by a malicious attack [[2]](#ref2).
 
-# Gray Box
+## Gray Box
 {: #graybox}
 
 This type of analysis can be considered a mix of the previous ones, as the test analyst receives some information from the client, such as: data from the network infrastructure or access to a certain web service. Gray box testing is when the tester has a partial understanding of the internal structure of the system under test. Gray box testing is a process for debugging software applications by making an input through the front end and verifying the data on the back end [[2]](#ref2) [[3]](#ref3).
 
 A good example of Gray Box tests are those aimed at analyzing possible security flaws in an application coming through an accredited user, such as access permission levels and unauthorized changes [[2]](#ref2).
 
-# White Box vs Gray Box
+## White Box vs Gray Box
 
 | Teste     | Benefits | Disadvantages |
 | --------- | ---------- | ------------ |
@@ -62,7 +62,7 @@ A good example of Gray Box tests are those aimed at analyzing possible security 
 
 [[2]](#ref2).
 
-# Why do software testing?
+## Why do software testing?
 
 Software testing is very important in ensuring system quality control. He must ensure that the system meets all the requirements as the customer requested [[2]](#ref2).
 
