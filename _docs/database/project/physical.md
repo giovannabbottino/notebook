@@ -39,12 +39,6 @@ Within the normalization process, there are six normal forms. However, the main 
 - **Second normal form (2FN)**- To achieve second normal form (2FN), the relation must first be in first normal form (1FN). Also, to be considered in second normal form (2NF), all attributes of the relation that are not primary keys must depend solely on the primary key of the relation. In case of composite primary key, attributes that are not primary key must depend on all attributes of the primary key, not just part of them.;
 - **Third normal form (3FN)**- To be in third normal form (3FN), the relation must be in second normal form (2FN). Also, all attributes that are not keys must be functionally independent of other attributes that are not keys.
 
-## Denormalization
-
-Data normalization is considered a good practice, yet, in some cases, data denormalization can show positive results in the database. In a denormalized relationship, certain types of queries can be performed much more quickly. In a context in which the data of a relation are repeatedly consulted together with another relation, the union of these two relations, despite bringing problems inherent to denormalization, can allow queries that previously needed JOINS to be executed in a trivial way, thus being more fast [[1]](#ref1).
-
-The advantage of storing the data that will be recovered together, in a single table, is the reduction of unnecessary accesses to the disk. In cases where the retrieved data does not fit in memory, this is especially beneficial to the performance of the database in question [[1]](#ref1).
-
 ## References
 
 [1]  MARTINS, B; SILVA, M. Aprimoramento de desempenho de banco de dados: um estudo de caso de um Sistema Tutor Inteligente. Faculdade UnB Gama, Universidade de Brasília. Brasília p. 175. 2019.
