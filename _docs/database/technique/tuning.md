@@ -19,7 +19,7 @@ The importance of applying performance improvement techniques in the database is
 
 In addition, a DBMS that makes proper use of the resources offered to it – which can be obtained through analysis and improvements –, better presents some important characteristics, such as scalability, performance and high availability. From an end-user perspective, the impacts of a performance issue vary, in some cases being limited to just a brief delay in the end-user experience. However, it is also possible for the application to become completely or partially inaccessible. At the same time, numerous studies demonstrate the relationship between response time and end-user satisfaction, and while response time is just one of many factors that affect user satisfaction, it is often of great importance [[1]](#ref1).
 
-## Otimizando
+## Optimizing
 
 To explain about optimization, we will subdivide it into three main parts:
 - Schema – Improvements related to the physical implementation of the database.
