@@ -13,11 +13,15 @@ Database
 What are databases
 {: .fs-6 .fw-300  }
 
+<a style="color:white" href="#DBMS">DBMS</a>
+{: .label .label-red } 
+
 Database corresponds to a set of data that have some relationship with each other and serve some specific purpose or purposes when it comes to information technology, the meaning of database ends up carrying some other implicit concepts, such as: it symbolizes something of the real world; it has data that is related and has some meaning to its context; exists to serve a specific purpose or purposes [[1]](#ref1).
 
 A database can be created and manipulated without the use of tools specifically developed for this purpose, but the advance in data storage technologies currently offers systems that allow for a more agile and secure management. This integration of storage resources with computer programs that allow the management of these stored data is called Database Management System (DBMS). A DBMS facilitates the access and safe manipulation of data in the technological resources available to keep the data in a coherent way to meet the demands of its users [[1]](#ref1).
 
-## Sistema Gerenciador de Banco de Dados
+## Database Management System (DBMS)
+{: #DBMS}
 A Database Management System (DBMS) is a software whose main objective is to facilitate the management of implemented databases. Its general purpose is to provide interfaces that allow organizing and manipulating data that is stored in a persistent and non-volatile manner [[1]](#ref1). Some of the main operations that become possible when using a DBMS are:
 - Create databases;
 - Delete databases;
