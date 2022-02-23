@@ -3,6 +3,7 @@ layout: default
 title: DataModel
 nav_order: 1
 description: 'Database Data Model'
+has_children: true
 parent: Database
 ---
 
