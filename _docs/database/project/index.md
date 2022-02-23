@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Project
-nav_order: 3
+nav_order: 2
 description: 'Database Project'
 has_children: true
 parent: Database

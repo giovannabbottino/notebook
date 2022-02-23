@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Technique
-nav_order: 2
+nav_order: 3
 description: 'Database Techniques'
 has_children: true
 parent: Database
