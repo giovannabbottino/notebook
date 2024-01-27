@@ -165,6 +165,121 @@ void printGraph(Graph* graph) {
 
 ## The [Big-O notation]({{site.baseurl}}/algorithm/computational_complexity#bigO)
 
+
+<table>
+<thead>
+    <tr>
+        <th id="str" scope="col">
+            Data Structure
+        </th>
+        <th id="time" scope="col" class="span" colspan="8">
+            Time Complexity
+        </th>
+        <th id="space" scope="col">
+            Space Complexity
+        </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <th></th>
+        <th id="av" class="span" colspan="4" scope="colgroup">
+            Average
+        </th>
+        <th id="wr" class="span" colspan="4" scope="colgroup">
+            Worst
+        </th>
+        <th>
+            Worst
+        </th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>Access</th>
+        <th>Search</th>
+        <th>Insertion</th>
+        <th>Deletion</th>
+        <th>Access</th>
+        <th>Search</th>
+        <th>Insertion</th>
+        <th>Deletion</th>
+        <th></th>
+    </tr>
+<tr>
+            <th>Undirected Graph</th>
+            <td>O(V)</td>
+            <td>O(V + E)</td>
+            <td>O(1)</td>
+            <td>O(1)</td>
+            <td>O(V)</td>
+            <td>O(V + E)</td>
+            <td>O(1)</td>
+            <td>O(1)</td>
+            <td>O(V + E)</td>
+        </tr>
+        <tr>
+            <th>Directed Graph</th>
+            <td>O(V)</td>
+            <td>O(V + E)</td>
+            <td>O(1)</td>
+            <td>O(1)</td>
+            <td>O(V)</td>
+            <td>O(V + E)</td>
+            <td>O(1)</td>
+            <td>O(1)</td>
+            <td>O(V + E)</td>
+        </tr>
+        <tr>
+            <th>Star Graphs</th>
+            <td>O(V)</td>
+            <td>O(V)</td>
+            <td>O(1)</td>
+            <td>O(1)</td>
+            <td>O(V)</td>
+            <td>O(V)</td>
+            <td>O(1)</td>
+            <td>O(1)</td>
+            <td>O(V)</td>
+        </tr>
+        <tr>
+            <th>Parallel Graphs</th>
+            <td>O(V)</td>
+            <td>O(V)</td>
+            <td>O(1)</td>
+            <td>O(1)</td>
+            <td>O(V)</td>
+            <td>O(V)</td>
+            <td>O(1)</td>
+            <td>O(1)</td>
+            <td>O(V)</td>
+        </tr>
+        <tr>
+            <th>Tree Graphs</th>
+            <td>O(V)</td>
+            <td>O(V)</td>
+            <td>O(1)</td>
+            <td>O(1)</td>
+            <td>O(V)</td>
+            <td>O(V)</td>
+            <td>O(1)</td>
+            <td>O(1)</td>
+            <td>O(V)</td>
+        </tr>
+        <tr>
+            <th>Cyclic and Acyclic Graphs</th>
+            <td>O(V)</td>
+            <td>O(V + E)</td>
+            <td>O(1)</td>
+            <td>O(1)</td>
+            <td>O(V)</td>
+            <td>O(V + E)</td>
+            <td>O(1)</td>
+            <td>O(1)</td>
+            <td>O(V + E)</td>
+        </tr>
+        </tbody>
+</table>
+
 ## Code
 {: #code}
 
