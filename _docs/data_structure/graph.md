@@ -28,18 +28,23 @@ Graph theory is like a superpower that helps us understand and solve problems in
 1. Electrical Engineering:
 
 Imagine you're designing a super cool circuit for gadgets. Graph theory helps in creating the perfect connections between the electronic parts. We call these connections "topologies," and they have names like star, bridge, series, and parallel. It's like making sure all the parts talk to each other in the best way!
+
 2. Computer Science:
 
 In the world of computers, graph theory is like a superhero algorithm! Think of it as a set of instructions that help computers solve problems. Algorithms like Kruskal's, Prim's, and Dijkstra's are like the heroes of the computer world, making sure things run smoothly.
+
 3. Computer Network:
 
 Have you ever wondered how all the computers in your house or school are connected? Graph theory plays a big role! It helps us understand how these computers talk to each other in a network.
+
 4. Science:
 
 Even in the tiniest things, like the structure of molecules or DNA, graph theory is there! It helps scientists draw pictures (graphs) to understand how these tiny building blocks connect and work together.
+
 5. Linguistics:
 
 Ever heard of a language superhero? Graph theory helps us understand the rules of languages. The way words are put together in sentences and the structure of languages are like big word puzzles, and graphs help solve them!
+
 6. General Stuff:
 
 If you're planning a road trip and want to figure out the best route between cities, guess what? Graph theory comes to the rescue! Also, when you look at your family tree, that's like a special kind of graph called a tree.
