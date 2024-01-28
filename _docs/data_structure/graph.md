@@ -16,9 +16,16 @@ Consider a spider web—a network of dots and lines. Each dot is linked to anoth
 
 In the realm of computer science, graphs provide a visual representation of interconnected elements. The dots in this scenario are formally known as vertices (V), while the lines that connect them are referred to as edges (E).
 
-When constructing a graph on a computer, it's crucial to design a plan outlining how the dots and lines will be stored. This plan serves as a guide, helping the computer comprehend and remember the multitude of connections among the dots.
+When constructing a graph on a computer, it's crucial to design a plan outlining how the dots and lines will be stored. This plan serves as a guide, helping the computer comprehend and remember the multitude of connections among the dots [[1]](#ref1).
 
 In essence, a graph simplifies the depiction of relationships by connecting dots with lines. This approach offers a captivating method for computers to understand the intricate web of connections between various entities, much like the intricate structure of a spider web.
+
+<a href="{{ site.baseurl }}/assets/images/graph/graph.png" data-toggle="lightbox">
+    <img src="{{ site.baseurl }}/assets/images/graph/graph.png" class="img-fluid" />
+</a>
+
+###### From [SCIENCE](#ref1)
+
 
 Why use a Graph?
 {: #why} 
@@ -74,7 +81,7 @@ Understanding the relationship between the number of vertices and edges allows f
 ## Implement a Graph
 {: #implement}
 
-The code starts by including a definition of a structure called Node is created. A Node represents a house, and it has a number (data) and a connection to the next house (next).
+The code starts by including a definition of a structure called Node. A Node represents a house, and it has a number (data) and a connection to the next house (next).
 
 ```c
 typedef struct Node {
@@ -83,7 +90,7 @@ typedef struct Node {
 } Node;
 ```
 
-Another structure is defined, called Graph. This represents the entire map of our city. It contains the number of houses (vertices) and a list (adjacency_list) that shows how the houses are connected.
+Another structure that need to be defined is the Graph. This represents the entire map of our city. It contains the number of houses (vertices) and a list (adjacency_list) that shows how the houses are connected.
 
 ```c
 typedef struct Graph {
@@ -350,3 +357,7 @@ int main() {
     return 0;
 }
 ```
+
+## References
+[1] GEEKSFORGEEKS. *Applications of Graph Data Structure*. Available at: <https://www.geeksforgeeks.org/applications-of-graph-data-structure/>. Accessed: January 28, 2024.
+{: #ref1}
