@@ -24,7 +24,7 @@ In essence, a graph simplifies the depiction of relationships by connecting dots
     <img src="{{ site.baseurl }}/assets/images/graph/graph.png" class="img-fluid" />
 </a>
 
-###### From [SCIENCE](#ref1)
+###### From [GEEKSFORGEEKS](#ref1)
 
 
 Why use a Graph?
