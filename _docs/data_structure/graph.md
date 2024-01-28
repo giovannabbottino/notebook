@@ -12,26 +12,26 @@ Graph
 What is a Graph?
 {: .fs-6 .fw-300  }
 
-Imagine a graph is like a bunch of dots (vertices) that are connected by lines (edges). Each dot is a special point, and the lines show how these points are related to each other. It's like connecting the dots with lines to create a picture.
+Consider a spider web—a network of dots and lines. Each dot is linked to another through a line, creating a complex and diverse set of connections that goes beyond the simplicity of lists or trees.
 
-In computer science, we use graphs to show how things are connected. The dots are called vertices, and the lines connecting them are called edges. Unlike when we write in a straight line, a graph lets us connect dots in all sorts of interesting ways.
+In the realm of computer science, graphs provide a visual representation of interconnected elements. The dots in this scenario are formally known as vertices (V), while the lines that connect them are referred to as edges (E).
 
-When we want to make a graph in a computer, we have to create a plan for how the dots and lines will be stored. This plan helps the computer understand and remember all the connections between the dots.
+When constructing a graph on a computer, it's crucial to design a plan outlining how the dots and lines will be stored. This plan serves as a guide, helping the computer comprehend and remember the multitude of connections among the dots.
 
-So, in simple terms, a graph is like connecting dots with lines to represent relationships between different things. It's a cool way for computers to understand how stuff is linked together!
+In essence, a graph simplifies the depiction of relationships by connecting dots with lines. This approach offers a captivating method for computers to understand the intricate web of connections between various entities, much like the intricate structure of a spider web.
 
 Why use a Graph?
 {: #why} 
 
-Graph theory is like a superpower that helps us understand and solve problems in different areas. Let's check out some cool places where graph theory is at work!
+Graph theory is like a superpower that helps us understand and solve problems in different areas. 
 
 - Electrical Engineering:
 
-Imagine you're designing a super cool circuit for gadgets. Graph theory helps in creating the perfect connections between the electronic parts. We call these connections "topologies," and they have names like star, bridge, series, and parallel. It's like making sure all the parts talk to each other in the best way!
+Imagine you're designing a circuit for gadgets. Graph theory helps in creating the perfect connections between the electronic parts. We call these connections "topologies," and they have names like star, bridge, series, and parallel. 
 
 - Computer Science:
 
-In the world of computers, graph theory is like a superhero algorithm! Think of it as a set of instructions that help computers solve problems. Algorithms like Kruskal's, Prim's, and Dijkstra's are like the heroes of the computer world, making sure things run smoothly.
+In the world of computers, graph theory is like a algorithm! Think of it as a set of instructions that help computers solve problems. Algorithms like Kruskal's, Prim's, and Dijkstra's make sure things run smoothly.
 
 - Computer Network:
 
@@ -39,46 +39,37 @@ Have you ever wondered how all the computers in your house or school are connect
 
 - Science:
 
-Even in the tiniest things, like the structure of molecules or DNA, graph theory is there! It helps scientists draw pictures (graphs) to understand how these tiny building blocks connect and work together.
-
-- Linguistics:
-
-Ever heard of a language superhero? Graph theory helps us understand the rules of languages. The way words are put together in sentences and the structure of languages are like big word puzzles, and graphs help solve them!
-
-- General Stuff:
-
-If you're planning a road trip and want to figure out the best route between cities, guess what? Graph theory comes to the rescue! Also, when you look at your family tree, that's like a special kind of graph called a tree.
-Graph theory is like a secret code that helps us understand and solve puzzles in all these cool areas. It's like having a friend who can connect the dots for us in the most amazing ways!
+Even in the tiniest things, like the structure of molecules or DNA, graph theory is there! It helps scientists draw pictures (graphs) to understand how these building blocks connect and work together.
 
 ### Types of Graphs
 
-Hey there, curious mind! Let's talk about different ways things can be connected using something called graphs. Think of graphs like maps that help us understand how things relate to each other.
+Knowing that the number of vertices are V and number of edges are E here are the types of graphs.
 
-- Friendship Circles - Undirected Graphs:
-
-Imagine you have a bunch of friends, and you all like each other equally. That's an "Undirected Graph"! It's like a friendly web where connections go both ways. You can easily see who's friends with who.
-
-- One-Way Streets - Directed Graphs:
+- Undirected Graphs:
   
-Now, picture roads where you can only go in one direction. That's a "Directed Graph." It's like having streets with arrows, showing you can travel from one place to another, but not necessarily the other way around.
+In an undirected graph with V vertices, the number of potential connections is determined by E. Each friend is a vertex, and the relationships between friends form edges. The undirected graph allows for bidirectional connections, illustrating a friendly network with a maximum of E = V * (V - 1) / 2 possible edges.
 
-- Star Connections - Star Graphs:
+- Directed Graphs:
 
-Think about a central point connected to other points. This is a "Star Graph." It's like having one main thing that's linked to everything else. The connections go from the center to the outer points, like the rays of a star.
+For a directed graph with V vertices and E edges, each edge represents a one-way connection between two vertices. The maximum number of directed edges is E = V * (V - 1), showcasing the unidirectional nature of the connections.
 
-- Parallel Paths - Parallel Graphs:
-  
-Imagine two separate roads or paths that don't connect. That's a "Parallel Graph." It's like having two things happening independently, with no interaction between them. They're like two different stories going on at the same time.
+- Star Graphs:
 
-- Family Tree - Tree Graphs:
-  
-Consider your family tree, starting from grandparents down to cousins. It's a "Tree Graph." There's a main person (maybe your grandparent), and the family branches out like the branches of a tree.
+In a star graph with a central point linked to other points, there are V - 1 edges radiating from the center to the outer points. Thus, the number of edges in a star graph is E = V - 1.
 
-- Web of Connections - Cyclic and Acyclic Graphs:
-  
-Think about connections without any loops. If you can follow a path and never come back to where you started, it's an "Acyclic Graph." But if you can loop back, it's a "Cyclic Graph." It's like exploring paths without getting stuck in a loop.
+- Parallel Graphs:
 
-Graphs are like super cool maps that help us understand how things are linked. Each type of graph shows different ways things can connect in our world of connections! 
+For parallel graphs featuring two independent roads or paths, the number of edges is directly related to the number of vertices. The maximum number of edges in parallel graphs is E = V * (V - 1).
+
+- Tree Graphs:
+
+A tree graph with V vertices will have exactly V - 1 edges, creating a hierarchical structure resembling a family tree.
+
+- Cyclic and Acyclic Graphs:
+
+In cyclic graphs, the number of edges can vary but is limited by the number of vertices. The maximum number of edges in a simple cyclic graph is E = V * (V - 1). Acyclic graphs, being devoid of loops, have a maximum of E = V - 1 edges.
+
+Understanding the relationship between the number of vertices and edges allows for a more precise characterization of these graph structures, providing insights into their connectivity and complexity.
 
 ## Implement a Graph
 {: #implement}
@@ -164,7 +155,6 @@ void printGraph(Graph* graph) {
 ```
 
 ## The [Big-O notation]({{site.baseurl}}/algorithm/computational_complexity#bigO)
-
 
 <table>
 <thead>
