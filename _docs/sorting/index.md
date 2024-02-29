@@ -10,9 +10,9 @@ permalink: /sorting
 Sorting Algorithms
 {: .fs-9}
 
-Sorting algorithms are like digital organizers for computers. They're the handy tools that help arrange numbers, words, or any kind of information in a neat order. But what exactly are they, how do they work, and why are they so important? Let's break it down in a way that's easy for everyone to understand.
+Sorting algorithms are like digital organizers for computers. They're the handy tools that help arrange numbers, words, or any kind of information in a order. But what exactly are they, how do they work, and why are they important? Let's break it down in a way that's easy to understand.
 
-What are data they?
+What are they?
 {: .fs-6 .fw-300  }
 
 Imagine you have a messy pile of cards with numbers written on them, and you want to put them in order from smallest to largest. Sorting algorithms are like step-by-step instructions that tell the computer how to do this efficiently. They compare numbers, swap them around, and repeat these steps until everything is nicely sorted.
