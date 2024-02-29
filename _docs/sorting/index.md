@@ -25,8 +25,6 @@ Why Are They Important?
 {: .fs-6 .fw-300  }
 Think about when you search for something on your computer or phone. Behind the scenes, sorting algorithms help speed up this process by arranging information in a way that makes it quicker to find what you're looking for. They're also essential in tasks like organizing files, managing databases, or even playing video games where characters or objects need to be arranged in a particular order.
 
-A Bit of History
-{: .fs-6 .fw-300  }
 Sorting algorithms have been around since the early days of computers. They've evolved over time as clever people found better and faster ways to sort data. Imagine starting with basic techniques and gradually refining them into more advanced methods, like going from sorting a deck of cards one by one to using a magic trick that sorts them all at once!
 
 Some Important Sorting Algorithms
