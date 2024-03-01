@@ -18,6 +18,12 @@ How Merge Sort Works?
 2. Conquer: Once the sublists are sufficiently small (containing only one element), they are merged back together in a sorted order.
 3. Merge: During the merge phase, the sublists are merged pairwise, with elements being compared and rearranged to form larger sorted sublists. This process continues until the entire list is sorted.
 
+<a href="{{ site.baseurl }}/assets/images/graph/graph.png" data-toggle="lightbox">
+    <img src="{{ site.baseurl }}/assets/images/graph/graph.png" class="img-fluid" />
+</a>
+
+###### From [GEEKSFORGEEKS](#ref1)
+
 Why Use Merge Sort
 {: .fs-6 .fw-300  }
 
@@ -159,3 +165,6 @@ void printList(int list[], int i){
     printf("\n");
 }
 ```
+## References
+[1] GEEKSFORGEEKS. *Applications of Graph Data Structure*. Available at: <https://www.geeksforgeeks.org/applications-of-graph-data-structure/>. Accessed: January 28, 2024.
+{: #ref1}
