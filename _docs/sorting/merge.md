@@ -36,6 +36,55 @@ Merge Sort offers several advantages:
 ## Implement a Graph
 {: #implement}
 
+First, we will need the lesseq macro. This macro is used for simplifying code and making it more readable.
+
+- lesseq(A,B) compares if A is less than or equal to B.
+
+```c
+#define lesseq(A,B) ((A) <= (B))
+```
+
+It will be used by the `merge` function. This function merges two sorted subarrays into one sorted array. It dynamically allocates memory for the temporary array R. It iterates through both subarrays, comparing elements and copying them to R in sorted order. It then copies the sorted elements from R back to the original array V, and deallocates memory for R.
+
+```c
+void merge(int *V, int l, int m, int r){
+  int *R=malloc(sizeof(int)*(r-l+1));
+  int i=l,j=m+1,k=0;
+
+  while(i<=m && j<=r)
+  {
+    if(lesseq(V[i],V[j]))
+      R[k++]=V[i++];
+    else
+      R[k++]=V[j++];
+  }
+
+  while(i<=m)
+      R[k++]=V[i++];
+  while(j<=r)
+      R[k++]=V[j++];
+
+
+  k=0;
+  for(i=l;i<=r;i++)
+    V[i]=R[k++];
+  free(R);
+}
+```
+
+With that we can create the `mergesort` function, this function implements the merge sort algorithm recursively. It divides the array into two halves, sorts each half recursively using `mergesort`, and then merges the sorted halves using the `merge` function. 
+
+```c 
+void mergesort(int *V,int l, int r){
+  if (l>= r) return;
+  int middle=(l+r)/2;
+  mergesort(V,l,middle);
+  mergesort(V,middle+1,r);
+  merge(V,l,middle,r);
+}
+```
+
+That's it! You have your merge sort! 
 
 ## The [Big-O notation]({{site.baseurl}}/algorithm/computational_complexity#bigO)
 
