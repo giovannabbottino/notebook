@@ -19,7 +19,7 @@ How Merge Sort Works?
 3. Merge: During the merge phase, the sublists are merged pairwise, with elements being compared and rearranged to form larger sorted sublists. This process continues until the entire list is sorted.
 
 <a href="{{ site.baseurl }}/assets/images/sort/merge.png" data-toggle="lightbox">
-    <img src="{{ site.baseurl }}/assets/images/sort/merge.pngg" class="img-fluid" />
+    <img src="{{ site.baseurl }}/assets/images/sort/merge.png" class="img-fluid" />
 </a>
 
 ###### From [Wikipedia](#ref1)
