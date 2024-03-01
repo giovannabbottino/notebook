@@ -18,11 +18,11 @@ How Merge Sort Works?
 2. Conquer: Once the sublists are sufficiently small (containing only one element), they are merged back together in a sorted order.
 3. Merge: During the merge phase, the sublists are merged pairwise, with elements being compared and rearranged to form larger sorted sublists. This process continues until the entire list is sorted.
 
-<a href="{{ site.baseurl }}/assets/images/graph/graph.png" data-toggle="lightbox">
-    <img src="{{ site.baseurl }}/assets/images/graph/graph.png" class="img-fluid" />
+<a href="{{ site.baseurl }}/assets/images/sort/merge.png" data-toggle="lightbox">
+    <img src="{{ site.baseurl }}/assets/images/sort/merge.pngg" class="img-fluid" />
 </a>
 
-###### From [GEEKSFORGEEKS](#ref1)
+###### From [Wikipedia](#ref1)
 
 Why Use Merge Sort
 {: .fs-6 .fw-300  }
@@ -38,6 +38,8 @@ Merge Sort offers several advantages:
 
 
 ## The [Big-O notation]({{site.baseurl}}/algorithm/computational_complexity#bigO)
+
+Merge Sort has a time complexity of O(n log n) for both the average and worst-case scenarios, making it highly efficient for sorting large datasets. It is particularly suitable for scenarios where stable sorting and consistent performance are required. Additionally, Merge Sort has a space complexity of O(n), as it requires additional space proportional to the size of the input list for temporary storage during the sorting process.
 
 <table>
 <thead>
@@ -80,7 +82,7 @@ Merge Sort offers several advantages:
     </tr>
     <tr>
         <th>Merge Sort</th>
-        <td X</td ><td >X</td ><td >X</td ><td >X</td ><td >X</td >	<td >X</td >	<td >X</td >	<td >X</td >	<td >X</td >
+        <td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n)</td>
     </tr>
 </tbody>
 </table>
@@ -166,5 +168,5 @@ void printList(int list[], int i){
 }
 ```
 ## References
-[1] GEEKSFORGEEKS. *Applications of Graph Data Structure*. Available at: <https://www.geeksforgeeks.org/applications-of-graph-data-structure/>. Accessed: January 28, 2024.
+[1] Wikipedia. *Merge Sort*. Available at: <https://en.wikipedia.org/wiki/Merge_sort>. Accessed: March 01, 2024.
 {: #ref1}
