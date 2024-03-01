@@ -36,6 +36,6 @@ Here are a few notable sorting algorithms that have shaped the world of computin
 - Selection Sort: Also straightforward but not very efficient for large datasets.
 - Quicksort: One of the fastest sorting algorithms, widely used in many applications.
 - Mergesort: Efficient and stable, making it a popular choice for sorting large datasets.
-- Heapsort: Combines the advantages of merge sort and insertion sort, particularly useful for sorting large datasets efficiently.
+- Shell Sort: Improves on insertion sort by allowing the exchange of items that are far apart, resulting in a faster sorting process.
 
 In a nutshell, sorting algorithms are the unsung heroes of the digital world. They make our lives easier by tidying up information, making it easier to manage, search, and use in all sorts of applications. So, next time you organize your files or search for something online, remember that behind the scenes, sorting algorithms are quietly doing their job to keep things in order.
