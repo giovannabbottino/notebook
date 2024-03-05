@@ -44,6 +44,30 @@ In conclusion, Shell sorting is a versatile and efficient sorting algorithm that
 ## Implement Shell Sort
 {: #implement}
 
+First, we will need some macros. Theses macro are used for simplifying code and making it more readable.
+
+- less: This macro defines a comparison operation to check if A is less than B.
+- exch: This macro exchanges the values of A and B.
+- cmpexch: This macro compares A and B using the less macro and exchanges them if B is less than A.
+
+```c
+#define less(A,B) ((A) < (B))
+#define exch(A,B) { int t; t=A;A=B;B=t; }
+#define cmpexch(A,B) { if (less(B,A)) exch(A,B); }
+```
+
+It will be used by the shell function. This function contain nested loops that perform a series of comparisons and exchanges to sort the array: The outer loop iterates over elements of the array from index l+1 to r. The inner loop iterates backward from the current element to the left end of the array. Inside the inner loop, the cmpexch macro compares adjacent elements and exchanges them if necessary.
+
+```c
+void shell(Item *list, int l, int r) { 
+    for(int i=l+1;i<=r;i++)
+        for(int j=i;j>l;j--)
+            cmpexch(list[j-1],list[j]);
+}
+```
+
+Voilà!
+
 ## The [Big-O notation]({{site.baseurl}}/algorithm/computational_complexity#bigO)
 
 <table>
@@ -104,7 +128,7 @@ In conclusion, Shell sorting is a versatile and efficient sorting algorithm that
 ## Code
 {: #code}
 
-```
+```c
 /*Giovanna Borges Bottino giovannabbottino@gmail.com*/
 
 #include <stdio.h>
