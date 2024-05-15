@@ -33,7 +33,7 @@ Merge Sort offers several advantages:
 - It guarantees stable sorting, meaning that elements with equal keys remain in their original order after sorting.
 - Merge Sort is well-suited for sorting linked lists, as it does not require random access to elements.
 
-## Implement a Graph
+## Implement 
 {: #implement}
 
 First, we will need the lesseq macro. This macro is used for simplifying code and making it more readable.
