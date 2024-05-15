@@ -68,6 +68,17 @@ First, we will need some macros.
 - exch: `#define exch(A,B) { int t; t=A; A=B; B=t; }` :  A macro to exchange the values of A and B.
 - cmpexch: `#define cmpexch(A,B) { if (less(B,A)) exch(A,B); }` : A macro that compares A and B, and exchanges them if B is less than A.
 
+And the Bubble Sort Function, which will compare and exchange the elements at the list
+
+```
+void bubble(Item *list, int l, int r) { 
+   int i, j;
+   for(i=l; i<r; i++)
+       for(j=l+1; j<=r; j++)
+           cmpexch(list[j-1], list[j]);
+}
+```
+
 ## The [Big-O notation]({{site.baseurl}}/algorithm/computational_complexity#bigO)
 
 <table>
