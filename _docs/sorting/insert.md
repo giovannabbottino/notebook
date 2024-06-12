@@ -6,6 +6,9 @@ description: 'Insertion Sort'
 parent: Sorting Algorithms
 ---
 
+Insertion Sort
+{: .fs-9}
+
 Insertion Sort is a simple and intuitive sorting algorithm that builds the final sorted array one item at a time. It is much like sorting playing cards in your hands. It is an in-place, stable, comparison-based sorting algorithm.
 
 How Insertion Sort Works?
