@@ -15,11 +15,11 @@ Personal notebook with notes on data structure, sorting algorithm, search and so
     - [X] [graph](https://github.com/giovannabbottino/notebook/tree/master/data_structure/graph.c)
     - [X] [hash table](https://github.com/giovannabbottino/notebook/tree/master/data_structure/hash.c)
 - [ ] SORT:
-    - [ ] bubble
-    - [ ] insertion
-    - [ ] merge
+    - [X] bubble
+    - [X] insertion
+    - [X] merge
     - [ ] quick
     - [ ] selection
-    - [ ] shell
+    - [X] shell
 - [ ] SEARCH:
     - [ ] binary
