@@ -31,6 +31,55 @@ Quick select is particularly useful when there is a need to find the k-th smalle
 
 Additionally, quick select can be adapted to find elements based on their rank or percentile, making it versatile for various statistical and computational tasks.
 
+
+## Implement 
+{: #implement}
+
+First create the swap function: This function swaps two elements in an array. It's used by both Quick Sort and Quick Select to reorganize elements.
+```c
+void swap(int *arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+```
+
+Then we create a separa function, the partition function used by both Quick Sort and Quick Select. It selects a pivot (in this case, the last element arr[r]), partitions the array into two parts (elements smaller than the pivot and elements larger than the pivot), and returns the index (j) of the pivot after partitioning.
+
+```c
+int separa(int *arr, int l, int r){
+    int c = arr[r];
+    int j = l, k, aux;
+    k = l;
+    while(k<r){
+        if(arr[k]<c){
+            swap(arr,k,j);
+            j++;
+        }
+        k++;
+    }
+    swap(arr,k,j);
+    return j;
+}
+```
+
+Then you are ready to create your quick select function, it finds the k-th smallest element in an array using the Quick Select algorithm. It recursively partitions the array around a pivot until it finds the element at index k. If the pivot index i is greater than k, it recursively calls itself on the left subarray (arr[l] to arr[i-1]). If i is less than k, it calls itself on the right subarray (arr[i+1] to arr[r]). Once i equals k, arr[k] contains the k-th smallest element.
+
+```c
+void quickSelect(int *arr, int l, int r, int k){
+    int i;
+    if(r<=l){
+        return;
+    }
+    i = separa(arr,l,r);
+    if(i>k){
+        quickSelect(arr,l,i-1,k);
+    }
+    if(i<k){
+        quickSelect(arr,i+1,r,k);}
+    }
+```
+
 ## The [Big-O notation]({{site.baseurl}}/algorithm/computational_complexity#bigO)
 
 <table>
