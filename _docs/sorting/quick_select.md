@@ -18,8 +18,8 @@ The quick select algorithm works by selecting a pivot element from the list and 
 
 Unlike the quicksort algorithm which recursively processes both sides of the partition, quick select only recurses into one side (the side that contains the desired element), which leads to a worst-case time complexity of O(n^2). However, on average, the algorithm runs in O(n) time, making it efficient for finding the k-th smallest element in linear time on average.
 
-<a href="{{ site.baseurl }}/assets/images/sort/quickselect.png" data-toggle="lightbox">
-    <img src="{{ site.baseurl }}/assets/images/sort/quickselect.png" class="img-fluid" />
+<a href="{{ site.baseurl }}/assets/images/sort/quick_select.png" data-toggle="lightbox">
+    <img src="{{ site.baseurl }}/assets/images/sort/quick_select.png" class="img-fluid" />
 </a>
 
 ###### From [GeeksforGeeks](#ref1)
