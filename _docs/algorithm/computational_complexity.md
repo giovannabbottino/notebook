@@ -25,10 +25,16 @@ The ultimate goal is not just to make code that works, but that is also efficien
 
 One of the ways to rank algorithms on performance changes in terms of input size is using asymptotic notation [(Big O)](#bigO). It is a method of describing the behavior of limits.
 
-# Big-O notation
+# Most common notations
+
+## Omega (Ω) 
+
+Represents the lower limit of complexity, that is, the best case. When we say that the complexity is Ω(f(n)), the algorithm cannot be more efficient than f(n) in terms of execution time. Ω(g(n)) = { f(n) : ∃ c > 0, n0 > 0 | 0 ≤ cg(n) ≤ f(n), ∀ n ≥ n0}
+
+## Big-O notation
 {: #bigO}
 
-To express the idea of proportionality in the execution time of the algorithm, the notation O(f(N)) - Order of f(N) or the Big-O notation was proposed.
+To express the idea of proportionality in the execution time of the algorithm, the notation O(f(N)) - Order of f(N) or the Big-O notation was proposed.  O(g(n)) = { f(n) : ∃ c > 0, n0 > 0 | 0 ≤ f(n) ≤ cg(n), ∀ n ≥ n0}
 
 We say that O(f(N)) as a set:
 O( f(N) )={g(N) if there are constants c0 and N0 such that g(N)<c0f(N) for all N>N0} We can freely say that g(N)=O( f(N) ) , but it is more correct to say: g(N) is O( f(N) ) or g(N)∈ O( f(N) ).
@@ -42,6 +48,12 @@ Basically, the idea is to use the letter O followed by a function over N that de
 ###### From [FARIAS (2019)](#ref1)
 
 The O(f(N)) notation ignores important points about the algorithm, how it works for N minors and whether we are going to run on a slow or fast computer. But from the point of view of complexity, what matters about the algorithm is its asymptotic behavior, that is, which curve best describes its behavior. So when analyzing the execution time of a code, what you expect to know is if the algorithm is:
+
+## Theta (Θ): 
+
+Represents a tight limit, that is, when the complexity in the best and worst cases is the same.
+
+Θ(g(n)) = { f(n) : ∃ c1 > 0, c2 > 0, n0> 0 | 0 ≤ c1 g(n) ≤ f(n) ≤ c2 g(n) , ∀ n ≥ n0}
 
 ## Big-O - Table
 {: #bigO-table}
