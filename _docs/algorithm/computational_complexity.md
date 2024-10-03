@@ -29,12 +29,16 @@ One of the ways to rank algorithms on performance changes in terms of input size
 
 ## Omega (Ω) 
 
-Represents the lower limit of complexity, that is, the best case. When we say that the complexity is Ω(f(n)), the algorithm cannot be more efficient than f(n) in terms of execution time. Ω(g(n)) = { f(n) : ∃ c > 0, n0 > 0 | 0 ≤ cg(n) ≤ f(n), ∀ n ≥ n0}
+Represents the lower limit of complexity, that is, the best case. When we say that the complexity is Ω(f(n)), the algorithm cannot be more efficient than f(n) in terms of execution time. 
+
+`Ω(g(n)) = { f(n) : ∃ c > 0, n0 > 0 | 0 ≤ cg(n) ≤ f(n), ∀ n ≥ n0}`
 
 ## Big-O notation
 {: #bigO}
 
-To express the idea of proportionality in the execution time of the algorithm, the notation O(f(N)) - Order of f(N) or the Big-O notation was proposed.  O(g(n)) = { f(n) : ∃ c > 0, n0 > 0 | 0 ≤ f(n) ≤ cg(n), ∀ n ≥ n0}
+To express the idea of proportionality in the execution time of the algorithm, the notation O(f(N)) - Order of f(N) or the Big-O notation was proposed. 
+
+`O(g(n)) = { f(n) : ∃ c > 0, n0 > 0 | 0 ≤ f(n) ≤ cg(n), ∀ n ≥ n0}`
 
 We say that O(f(N)) as a set:
 O( f(N) )={g(N) if there are constants c0 and N0 such that g(N)<c0f(N) for all N>N0} We can freely say that g(N)=O( f(N) ) , but it is more correct to say: g(N) is O( f(N) ) or g(N)∈ O( f(N) ).
@@ -53,7 +57,7 @@ The O(f(N)) notation ignores important points about the algorithm, how it works 
 
 Represents a tight limit, that is, when the complexity in the best and worst cases is the same.
 
-Θ(g(n)) = { f(n) : ∃ c1 > 0, c2 > 0, n0> 0 | 0 ≤ c1 g(n) ≤ f(n) ≤ c2 g(n) , ∀ n ≥ n0}
+`Θ(g(n)) = { f(n) : ∃ c1 > 0, c2 > 0, n0> 0 | 0 ≤ c1 g(n) ≤ f(n) ≤ c2 g(n) , ∀ n ≥ n0}`
 
 ## Big-O - Table
 {: #bigO-table}
