@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: Method for Determining the Function T(n)
