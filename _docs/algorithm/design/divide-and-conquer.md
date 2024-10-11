@@ -5,6 +5,7 @@ nav_order: 1
 description: 'Divide and Conquer'
 parent: Design
 grand_parent: Algorithm
+has_children: true
 ---
 
 Divide and Conquer
