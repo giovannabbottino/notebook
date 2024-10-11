@@ -24,15 +24,12 @@ Represents the lower limit of complexity, that is, the best case. When we say th
 
 `Ω(g(n)) = { f(n) : ∃ c > 0, n0 > 0 | 0 ≤ cg(n) ≤ f(n), ∀ n ≥ n0}`
 
-## Big-O notation
+## O (O):
 {: #bigO}
 
-To express the idea of proportionality in the execution time of the algorithm, the notation O(f(N)) - Order of f(N) or the Big-O notation was proposed. 
+To express the idea of proportionality and worst cases in the execution time of the algorithm.
 
 `O(g(n)) = { f(n) : ∃ c > 0, n0 > 0 | 0 ≤ f(n) ≤ cg(n), ∀ n ≥ n0}`
-
-We say that O(f(N)) as a set:
-O( f(N) )={g(N) if there are constants c0 and N0 such that g(N)<c0f(N) for all N>N0} We can freely say that g(N)=O( f(N) ) , but it is more correct to say: g(N) is O( f(N) ) or g(N)∈ O( f(N) ).
 
 Basically, the idea is to use the letter O followed by a function over N that describes the growth of an algorithm. The faster the number of operations to process items grows, the worse the algorithm will perform [[1]](#ref1).  See the chart below.
 
@@ -41,8 +38,6 @@ Basically, the idea is to use the letter O followed by a function over N that de
 </a>
 
 ###### From [FARIAS (2019)](#ref1)
-
-The O(f(N)) notation ignores important points about the algorithm, how it works for N minors and whether we are going to run on a slow or fast computer. But from the point of view of complexity, what matters about the algorithm is its asymptotic behavior, that is, which curve best describes its behavior. So when analyzing the execution time of a code, what you expect to know is if the algorithm is:
 
 ## Theta (Θ): 
 
