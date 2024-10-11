@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Method for Determining the Function T(n)
+title: The Function T(n)
 nav_order: 2
 description: 'Function T(n)'
 parent: Algorithm
