@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Analysis of algorithms
+title: Backtracking
 nav_order: 3
-description: 'Analysis of algorithms'
+description: 'Backtracking algorithms'
 parent: Algorithm
 ---
 
