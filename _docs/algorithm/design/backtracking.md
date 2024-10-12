@@ -7,8 +7,7 @@ parent: Design
 grand_parent: Algorithm
 ---
 
-
-# Backtracking 
+Backtracking 
 {: #analysis}
 
 What is?
@@ -34,12 +33,14 @@ If a choice leads to a partial solution that cannot lead to a complete, valid so
 Steps in a Backtracking Algorithm:
 {: .fs-6 .fw-300  }
 
+
 - Choose: Select a potential option for the next step.
 - Check: Determine if this option leads towards a valid solution.
   - If yes, recurse (move forward with this choice).
   - If no, backtrack (undo the choice and try a different one).
 - Repeat until a complete solution is found or all possibilities are checked.
-- 
+
+ 
 When to Use Backtracking:
 {: .fs-6 .fw-300  }
 
