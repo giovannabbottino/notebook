@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Recurrence
-nav_order: 1
+nav_order: 4
 description: 'Solving Recurrence'
-parent: Divide and Conquer
+parent: Algorithm
 ---
 
 Solving recurrences
