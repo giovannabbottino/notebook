@@ -3,7 +3,8 @@ layout: default
 title: Backtracking
 nav_order: 3
 description: 'Backtracking algorithms'
-parent: Algorithm
+parent: Design
+grand_parent: Algorithm
 ---
 
 
